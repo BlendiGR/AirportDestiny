@@ -8,3 +8,6 @@ connection = mysql.connector.connect(
     database="flight_game",
     autocommit=True,
 )
+
+cur = connection.cursor()
+
