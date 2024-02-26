@@ -1,5 +1,5 @@
 class Jarkko:
     def __init__(self):
         self
+print('penis')
 
-print("HAHAHAAHA \U0001F600")
