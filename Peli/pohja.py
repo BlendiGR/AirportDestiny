@@ -1,4 +1,5 @@
 class Jarkko:
     def __init__(self):
-        self.
+        self
+print('penis')
 
