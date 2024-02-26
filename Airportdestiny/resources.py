@@ -8,3 +8,8 @@ connection = mysql.connector.connect(
     database="flight_game",
     autocommit=True,
 )
+cursor = connection.cursor()
+sql = f"SELECT * FROM airport WHERE ident ='EFHK'"
+cursor.execute(sql)
+result = cursor.fetchall()
+print(result)
