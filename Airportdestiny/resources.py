@@ -18,14 +18,13 @@ def yhteys():
 def satunnaiset_maat(sql_yhteys):
 
     cursor = sql_yhteys.cursor()
-    sql = ("""select airport.name from airport, country
+    sql = ("""select airport.name, country.name from airport, country
     where airport.iso_country=country.iso_country 
     and country.continent = 'EU' 
     and type = 'large_airport';""")
     cursor.execute(sql)
     result = cursor.fetchall()
-    print(result)
-    print(len(result))
+
 
     # random.sample varmistaa, että luvut eivät toistu
     pelilauta = []
@@ -36,7 +35,6 @@ def satunnaiset_maat(sql_yhteys):
         pelilauta.append(maa)
 
     for n in pelilauta:
-        print(n)
     return pelilauta
 
 sql_yhteys = yhteys()
