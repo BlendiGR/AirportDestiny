@@ -2,6 +2,7 @@ import mysql.connector
 import random
 
 
+
 def yhteys():
     connection = mysql.connector.connect(
         host="127.0.0.1",
