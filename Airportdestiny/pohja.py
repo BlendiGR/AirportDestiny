@@ -50,3 +50,4 @@ def pelaaja_nimi(määrä):
 määrä = määrä_määrittely()
 
 pelaaja_nimi(määrä)
+
