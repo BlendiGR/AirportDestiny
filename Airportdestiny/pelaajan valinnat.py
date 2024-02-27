@@ -7,11 +7,11 @@ def kivi_sakset_paperi():
           f"- Häviö = menetät 50% omaisuudestasi.")
     
     valinnat = ['kivi', 'sakset', 'paperi']
-    pelaajan_valinta = input("Valitse kivi, sakset tai paperi: ").lower()
-    tietokoneen_valinta = random.choice(valinnat)
-    print("Tietokone valitsi:", tietokoneen_valinta)
-    while pelaajan_valinta == valinnat:
-        print("Virheellinen syöte, yritä uudestaan")
+
+    while True:
+        pelaajan_valinta = input("Valitse kivi, sakset tai paperi: ").lower()
+        tietokoneen_valinta = random.choice(valinnat)
+        print("Tietokone valitsi:", tietokoneen_valinta)
         if pelaajan_valinta in valinnat:
             if pelaajan_valinta == tietokoneen_valinta:
                 print("Tasapeli!")
@@ -24,9 +24,11 @@ def kivi_sakset_paperi():
             else:
                 print("Hävisit! Joudut luovuttamaan 50% omaisuudestasi")
                 break
+        elif pelaajan_valinta != valinnat:
+            print("Virheellinen syöte")
 
 
-j
+
 pelikerrat = 0
 
 while pelikerrat < 2:
