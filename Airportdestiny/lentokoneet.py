@@ -43,3 +43,5 @@ Hinta: 1000€{RESET}
 Kuvaus: Innovaatiivinen konsepti, joka yhdistää aurinkoenergian ja raketin teknologian, tarjoten ainutlaatuisen, mutta vähemmän tehokkaan matkustustavan alhaisimmalla hinnalla.
  ''')
 
+lentokoneet = [[6000, 0.25], [5000, 0.30], [4000, 0,35], [3000, 0,40], [2000, 0,45], [1000, 0,50]]
+
