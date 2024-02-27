@@ -35,7 +35,7 @@ def satunnaiset_maat(sql_yhteys):
         pelilauta.append(maa)
 
     for n in pelilauta:
-    return pelilauta
+        return pelilauta
 
 sql_yhteys = yhteys()
 pelilauta = satunnaiset_maat(sql_yhteys)
