@@ -13,6 +13,10 @@ example = r'''
 print(example)
 def aloitus():
     count = int(input("Montako pelaajaa? (Max 4): "))
+    if count >= 4:
+        print("4 Pelaajaa valittu")
+    else:
+        print(f"{count} Pelaajaa valittu")
     return min(count,4)
 def pelaajien_syöttö_listaan():
     pelaajat1 = []
