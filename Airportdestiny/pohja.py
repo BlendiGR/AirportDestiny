@@ -29,7 +29,7 @@ def määrä_määrittely():
             if määrä <= 0 or määrä > 4:
                 print("Sallittu pelaajien määrä on 1 - 4.")
 
-            elif määrä > 0 and määrä <=4:
+            elif määrä > 0 and määrä <=4: #KATOTAAN ONKO SYÖTTÄMÄ MÄÄRÄ 1 - 4
                 return min(määrä, 4)
                 break
 
@@ -37,7 +37,7 @@ def määrä_määrittely():
         except ValueError:
             print("Virheellinen syöttö")
 
-#PELAAJIEN NIMET ------------------------------------------------------------------------------
+#PELAAJIEN NIMET ---------------------------------------------------------------------------------------------------
 def pelaaja_nimi(määrä):
     pelaajat = []
     nimet = set()
@@ -74,6 +74,6 @@ def intro_tekstit():
 määrä = määrä_määrittely()
 pelaajat = pelaaja_nimi(määrä)
 intro_tekstit()
-#ALOITETAAN PELI -------------------------------------------------------------------------------------------------
+#ALOITETAAN PELI ----------------------------------------------------------------------------------------------------
 
 
