@@ -55,25 +55,25 @@ def pelaaja_nimi(määrä):
                     print("Nimi on jo käytössä. Anna eri nimi.")
     return pelaajat
 
+#REITTIEN KERTOMINEN JA LENTOKONE VAIHTOEHDOT -----------------------------------------------------------------------
+def intro_tekstit():
+    print("Reitti on seuraavanlainen : ")
+    #PRINTATAAN REITIT NUMEROJÄRJESTYKESSÄ ALKAEN NRO 1 -------------------------------------------------------------------
+    for i, lentoasema in enumerate(pelilauta, start=1):
+        print(f"{i} -{GREEN} {lentoasema}{RESET}")
+
+    input(f"Aloitus summa on 1000€ ja tavoitteena on lentää {pelilauta[-1]}:iin mahdolisimman vähäisillä päästöillä. {GREEN} Paina ENTER jatkaaksesi{RESET}")
+    input(f"1 nopan silmäluku vastaa 1000€ ja kalliimat lentokoneet päästävät vähiten. {GREEN} Paina ENTER nähdääksesi vaihtoehdot.{RESET}")
+    for lentokone in lentokone_esittely:
+        print(lentokone)
+
+    input(f"{GREEN}Paina ENTER jatkaaksesi{RESET}")
+    input(f"Aloitamme pelin {GREEN}{pelilauta[0]}:issa {RESET} ja seuraavana pysäkkinä on {GREEN}{pelilauta[1]}{RESET}. {GREEN}(Paina ENTER jatkaaksesi){RESET}")
+
+
 määrä = määrä_määrittely()
 pelaajat = pelaaja_nimi(määrä)
-
-
-
-#REITTIEN KERTOMINEN JA LENTOKONE VAIHTOEHDOT -----------------------------------------------------------------------
-print("Reitti on seuraavanlainen : ")
-#PRINTATAAN REITIT NUMEROJÄRJESTYKESSÄ ALKAEN NRO 1 -------------------------------------------------------------------
-for i, lentoasema in enumerate(pelilauta, start=1):
-    print(f"{i} -{GREEN} {lentoasema}{RESET}")
-
-input(f"Aloitus summa on 1000€ ja tavoitteena on lentää {pelilauta[-1]}:iin mahdolisimman vähäisillä päästöillä. {GREEN} Paina ENTER jatkaaksesi{RESET}")
-input(f"1 nopan silmäluku vastaa 1000€ ja kalliimat lentokoneet päästävät vähiten. {GREEN} Paina ENTER nähdääksesi vaihtoehdot.{RESET}")
-for lentokone in lentokone_esittely:
-    print(lentokone)
-
-input(f"{GREEN}Paina ENTER jatkaaksesi{RESET}")
-
+intro_tekstit()
 #ALOITETAAN PELI -------------------------------------------------------------------------------------------------
 
-input(f"Aloitamme pelin {GREEN}{pelilauta[0]}:issa {RESET} ja seuraavana pysäkkinä on {GREEN}{pelilauta[1]}{RESET}. {GREEN}(Paina ENTER jatkaaksesi){RESET}")
 
