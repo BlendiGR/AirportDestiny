@@ -12,8 +12,8 @@ example = r'''
 '''
 print(example)
 def aloitus():
-    count = int(input("Montako pelaajaa? "))
-    return count
+    count = int(input("Montako pelaajaa? (Max 4): "))
+    return min(count,4)
 pelaajat = aloitus()
 print(f"{pelaajat} pelaajaa valittu")
 
