@@ -41,3 +41,4 @@ def satunnaiset_maat(sql_yhteys):
 
 sql_yhteys = yhteys()
 pelilauta = satunnaiset_maat(sql_yhteys)
+
