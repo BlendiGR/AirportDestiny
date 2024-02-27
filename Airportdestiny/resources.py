@@ -9,7 +9,12 @@ connection = mysql.connector.connect(
     autocommit=True,
 )
 cursor = connection.cursor()
-sql = f"SELECT * FROM airport WHERE ident ='EFHK'"
+sql = ("""select airport.name from airport, country
+where airport.iso_country=country.iso_country 
+and country.continent = 'EU' 
+and type = 'large_airport';""")
+
 cursor.execute(sql)
 result = cursor.fetchall()
 print(result)
+print(len(result))
