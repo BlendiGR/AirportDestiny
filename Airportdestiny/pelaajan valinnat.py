@@ -1,6 +1,6 @@
 import random
 ### KESKEN t: LEEVI:)
-def kivi_sakset_paperi():
+def kivi_sakset_paperi(pelaaja):
     print(f"Valitsit kaksinkamppailun pelissä kivi, sakset, paperi\n"
           f"- Voitto = saat 3x omaisuutesi määrän\n"
           f"- Tasapeli = et menetä mitään mutta voit yrittää uudestaan\n"
@@ -20,10 +20,11 @@ def kivi_sakset_paperi():
                  (pelaajan_valinta == 'sakset' and tietokoneen_valinta == 'paperi') or \
                  (pelaajan_valinta == 'paperi' and tietokoneen_valinta == 'kivi'):
                 print("Voitit!")
-                pelaajat[,joi
+                pelaajat[?][1] *= 3
                 break
             else:
                 print("Hävisit! Joudut luovuttamaan 50% omaisuudestasi")
+                pelaajat[?][1] *= 0.5
 
                 break
         elif pelaajan_valinta != valinnat:
