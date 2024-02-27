@@ -18,7 +18,7 @@ def yhteys():
 def satunnaiset_maat(sql_yhteys):
 
     cursor = sql_yhteys.cursor()
-    sql = ("""select airport.name from airport, country
+    sql = ("""select airport.name, country.name from airport, country
     where airport.iso_country=country.iso_country 
     and country.continent = 'EU' 
     and type = 'large_airport';""")
