@@ -13,13 +13,20 @@ example = r'''
 print(example)
 def aloitus():
     count = int(input("Montako pelaajaa? (Max 4): "))
+    if count >= 4:
+        print("4 Pelaajaa valittu")
+    else:
+        print(f"{count} Pelaajaa valittu")
     return min(count,4)
-pelaajat = aloitus()
-print(f"{pelaajat} pelaajaa valittu")
+def pelaajien_syöttö_listaan():
+    pelaajat1 = []
+    for i in range(pelaajat):
+        nimi = input(f"Anna pelaajan {i+1} nimi: ")
+        pelaajat1.append(nimi)
+        print(f"Pelaaaja {nimi} syötetty")
+    print(pelaajat1)
+    return pelaajat1
 
-pelaajat1 = []
-for i in range(pelaajat):
-    nimi = input(f"Anna pelaajan {i+1} nimi: ")
-    pelaajat1.append(nimi)
-    print(f"Pelaaaja {nimi} syötetty")
-print(pelaajat1)
+pelaajat = aloitus()
+tulos = pelaajien_syöttö_listaan()
+print(f"{pelaajat} pelaajaa valittu")
