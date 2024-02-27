@@ -60,9 +60,9 @@ pelaajat = pelaaja_nimi(määrä)
 
 
 
-#REITTIEN KERTOMINEN JA LENTOKONE VAIHTOEHDOT --------------------------------------------------------------
+#REITTIEN KERTOMINEN JA LENTOKONE VAIHTOEHDOT -----------------------------------------------------------------------
 print("Reitti on seuraavanlainen : ")
-
+#PRINTATAAN REITIT NUMEROJÄRJESTYKESSÄ ALKAEN NRO 1 -------------------------------------------------------------------
 for i, lentoasema in enumerate(pelilauta, start=1):
     print(f"{i} -{GREEN} {lentoasema}{RESET}")
 
@@ -73,8 +73,7 @@ for lentokone in lentokone_esittely:
 
 input(f"{GREEN}Paina ENTER jatkaaksesi{RESET}")
 
-#
+#ALOITETAAN PELI -------------------------------------------------------------------------------------------------
 
 input(f"Aloitamme pelin {GREEN}{pelilauta[0]}:issa {RESET} ja seuraavana pysäkkinä on {GREEN}{pelilauta[1]}{RESET}. {GREEN}(Paina ENTER jatkaaksesi){RESET}")
 
-print(pelaajat)

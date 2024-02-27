@@ -14,7 +14,7 @@ def help_komento():
     print(f"{GREEN}quit{RESET} - Lopeta peli")
     print("Kirjoita 'help' saadaksesi apua \n")
 
-def main():
+def apukommenot():
     while True:
         komento = input("Kirjoita komento 'help' nähdääksesi vaihtoehdot").lower()
         if komento == "help":
@@ -33,3 +33,4 @@ def main():
             print("Tuntematon komento.")
 
 help_komento()
+
