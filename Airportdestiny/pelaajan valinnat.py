@@ -26,7 +26,7 @@ def kivi_sakset_paperi():
                 break
 
 
-
+j
 pelikerrat = 0
 
 while pelikerrat < 2:
