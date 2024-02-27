@@ -13,3 +13,4 @@ def heittojen_tulostus(pelaajat):
 pelaajat = aloitus()
 pelaajat_lista = pelaajien_syöttö_listaan()
 heittojen_tulostus(pelaajat_lista)
+

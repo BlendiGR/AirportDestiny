@@ -30,7 +30,7 @@ def satunnaiset_maat(sql_yhteys):
     # random.sample varmistaa, että luvut eivät toistu
     pelilauta = []
 
-    satunnainen_luku = random.sample(range(len(result)), 20)
+    satunnainen_luku = random.sample(range(len(result)), 10)
     for num in satunnainen_luku:
         maa = result[num][0]
         pelilauta.append(maa)

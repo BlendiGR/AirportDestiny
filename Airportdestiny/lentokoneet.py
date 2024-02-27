@@ -42,3 +42,4 @@ Kuvaus: Kompakti ja monipuolinen sähköhelikopteri, joka tarjoaa pienemmät pä
 Hinta: 1000€{RESET}
 Kuvaus: Innovaatiivinen konsepti, joka yhdistää aurinkoenergian ja raketin teknologian, tarjoten ainutlaatuisen, mutta vähemmän tehokkaan matkustustavan alhaisimmalla hinnalla.
  ''')
+
