@@ -1,6 +1,8 @@
 import asetukset
 from resources import pelilauta
 from lentokoneet import lentokone_esittely
+from NoppaPeli import heittää_noppaa, heittojen_tulostus
+
 import random
 #VÄRIKOODIT ----------------------------------------------------------------------
 RED = '\033[31m'
@@ -70,10 +72,10 @@ def intro_tekstit():
     input(f"{GREEN}Paina ENTER jatkaaksesi{RESET}")
     input(f"Aloitamme pelin {GREEN}{pelilauta[0]}:issa {RESET} ja seuraavana pysäkkinä on {GREEN}{pelilauta[1]}{RESET}. {GREEN}(Paina ENTER jatkaaksesi){RESET}")
 
-
 määrä = määrä_määrittely()
 pelaajat = pelaaja_nimi(määrä)
 intro_tekstit()
 #ALOITETAAN PELI ----------------------------------------------------------------------------------------------------
+
 
 

@@ -20,9 +20,11 @@ def kivi_sakset_paperi():
                  (pelaajan_valinta == 'sakset' and tietokoneen_valinta == 'paperi') or \
                  (pelaajan_valinta == 'paperi' and tietokoneen_valinta == 'kivi'):
                 print("Voitit!")
+                pelaajat[,joi
                 break
             else:
                 print("Hävisit! Joudut luovuttamaan 50% omaisuudestasi")
+
                 break
         elif pelaajan_valinta != valinnat:
             print("Virheellinen syöte")
