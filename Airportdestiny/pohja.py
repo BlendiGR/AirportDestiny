@@ -73,8 +73,7 @@ for lentokone in lentokone_esittely:
 
 input(f"{GREEN}Paina ENTER jatkaaksesi{RESET}")
 
-for i in pelaajat:
-    pelaajat.append(pelilauta[0])
+#
 
 input(f"Aloitamme pelin {GREEN}{pelilauta[0]}:issa {RESET} ja seuraavana pysäkkinä on {GREEN}{pelilauta[1]}{RESET}. {GREEN}(Paina ENTER jatkaaksesi){RESET}")
 
