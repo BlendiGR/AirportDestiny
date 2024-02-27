@@ -11,3 +11,15 @@ example = r'''
                 |_|                                                 |___/ 
 '''
 print(example)
+def aloitus():
+    count = int(input("Montako pelaajaa? "))
+    return count
+pelaajat = aloitus()
+print(f"{pelaajat} pelaajaa valittu")
+
+pelaajat1 = []
+for i in range(pelaajat):
+    nimi = input(f"Anna pelaajan {i+1} nimi: ")
+    pelaajat1.append(nimi)
+    print(f"Pelaaaja {nimi} syötetty")
+print(pelaajat1)
