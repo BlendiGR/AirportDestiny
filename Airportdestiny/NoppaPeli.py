@@ -45,6 +45,5 @@ def heittojen_tulostus(pelaajat):
         print(f"Pelaaja {pelaaja['nimi']} heitti {tulos}. Hänellä on nyt {pelaaja[1]} rahaa.")
     print("Kaikki pelaajat ovat heittäneet noppaa.")
 
-heittojen_tulostus()
 
 
