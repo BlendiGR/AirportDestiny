@@ -43,7 +43,5 @@ def heittojen_tulostus(pelaajat):
         print(f"Pelaaja {pelaaja[0]} heitti {tulos}. Hänellä on nyt {pelaaja[1]} rahaa.")
     print("Kaikki pelaajat ovat heittäneet noppaa.")
     return pelaajat
-määrä = määrä_määrittely()
-pelaajat = pelaaja_nimi(määrä)
-heittojen_tulostus(pelaajat)
+
 
