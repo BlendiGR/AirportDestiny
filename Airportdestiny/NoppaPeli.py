@@ -45,3 +45,4 @@ def heittojen_tulostus(pelaajat):
     return pelaajat
 
 
+print("moi")
