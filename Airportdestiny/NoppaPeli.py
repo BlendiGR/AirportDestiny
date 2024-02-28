@@ -1,5 +1,10 @@
 import random
 
+RED = '\033[31m'
+GREEN = '\033[32m'
+YELLOW = '\033[33m'
+BLUE = '\033[34m'
+RESET = '\033[0m'
 def määrä_määrittely():
     while True:
         try:
@@ -37,12 +42,11 @@ def heittää_noppaa():
 
 def heittojen_tulostus(pelaajat):
     for pelaaja in pelaajat:
-        input(f"Pelaaja {pelaaja[0]}, paina Enter heittääksesi noppaa...")
+        input(f"{pelaaja[0]}, paina {GREEN}ENTER{RESET} heittääksesi noppaa! : \n ")
         tulos = heittää_noppaa()
         pelaaja[1] += tulos * 1000
-        print(f"Pelaaja {pelaaja[0]} heitti {tulos}. Hänellä on nyt {pelaaja[1]} rahaa.")
+        print(f"{pelaaja[0]} heitti {tulos}. Saldo on nyt {GREEN}{pelaaja[1]}{RESET} rahaa! \n")
     print("Kaikki pelaajat ovat heittäneet noppaa.")
     return pelaajat
 
 
-print("moi")

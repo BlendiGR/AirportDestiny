@@ -1,6 +1,6 @@
 import asetukset
 from Musiikki import musat
-from resources import pelilauta
+from resources import pelilauta, maiden_välinenpituus
 from lentokoneet import lentokone_esittely, lentokoneet, lentokoneet_esittely_stripped
 from NoppaPeli import heittää_noppaa, heittojen_tulostus
 
@@ -50,7 +50,7 @@ def pelaaja_nimi(määrä):
         while True:
             name = input(f" Mikä on pelaajan {i} nimi: ").strip()
             if name and name not in nimet:
-                pelaajat.append([name, 0, 0, 0]) #NIMI, RAHA, PÄÄSTÖT, PAIKKA 0 - 10
+                pelaajat.append([name, 0, 0, 0, 1]) #NIMI, RAHA, PÄÄSTÖT, PAIKKA 0 - 10, VUOROT#################################################################
                 nimet.add(name)
                 break
             else:
@@ -86,16 +86,36 @@ intro_tekstit()
 tulokset = []
 def main(heittää_noppaa):
     heittojen_tulostus(pelaajat)
-    for pelaaja in pelaajat:
-        vastaus2 = int(input(f"{pelaaja[0]} Haluatko ostaa lennon toiseen maahan {BLUE}(1){RESET}, heittää noppaa uudelleen {BLUE}(2){RESET} vai kompensoida päästöjä? {BLUE}(3){RESET}"))
-        if vastaus2 == 1:
-            lento(pelaaja, pelilauta)
-            print("lenttää")
-        elif vastaus2 == 2:
-            noppa = heittää_noppaa()
-            print(f"pelaajan {pelaaja[0]} silmäluku on {noppa}")
-        elif vastaus2 == 3:
-            print("kompensoida päästöjä")
+    valitsija = False
+    while not valitsija:
+        try:
+            for pelaaja in pelaajat:
+                vastaus2 = int(input(f"{pelaaja[0]} Haluatko ostaa lennon toiseen maahan {BLUE}(1){RESET}, heittää noppaa uudelleen {BLUE}(2){RESET} vai kompensoida päästöjä? {BLUE}(3) : {RESET}"))
+                print(f"{pelaaja[4]}. Vuoro! ")
+                if vastaus2 == 1:
+                    lento(pelaaja, pelilauta)
+                elif vastaus2 == 2:
+                    noppa = heittää_noppaa()
+                    input(f"{pelaaja[0]}Heitti silmäluvun {GREEN}{noppa}{RESET}! {GREEN} Paina ENTER jatkaaksesi :  {RESET}")
+                    pelaaja[1] += noppa * 1000
+                    input(f"{pelaaja[0]} sai {noppa * 1000} lisää rahaa! Saldo nyt : {pelaaja[1]} \n {GREEN} Paina ENTER jatkaaksesi {RESET} : ")
+                elif vastaus2 == 3:
+                    print("Kompensoidaan päästöjä.")
+                    ooksävarma = input(f"Päästöjen kompensointi maksaa 1000 rahaa ja kompensoi 10% niistä. Haluatko jatkaa? {GREEN}(Joo / Ei) : {RESET}").lower().strip()
+                    if ooksävarma == "joo":
+                        pelaaja[1] -= 1000
+                        pelaaja[2] *= 0.9
+                        print(f"{GREEN}{pelaaja[0]} Päästösi ovat kompensoitu!{RESET}")
+                    if ooksävarma == "ei":
+                        print("Kompensoituminen skipattiin!")
+                        break
+                pelaaja[4] += 1
+
+            valitsija = True
+
+        except ValueError:
+            print(f"{RED}Väärä komento!{RESET}")
+
 
 def lento(pelaaja, pelilauta):
     print('''
@@ -116,9 +136,19 @@ def lento(pelaaja, pelilauta):
                     if pelaaja[1] >= lentokoneet[i][0]:
                         pelaaja[1] -= lentokoneet[i][0]
                         print(f"Saldosi nyt {GREEN}{pelaaja[1]}{RESET}.")
-                        print(f"Valittu lentokone : {lentokoneet_esittely_stripped[i]}")
+                        print(f"Valittu lentokone : {GREEN}{lentokoneet_esittely_stripped[i]}{RESET}")
+                        input(f"{GREEN}Paina ENTER jatkaaksesi {RESET}")
                         if pelaaja[3] < len(pelilauta):
+                            kilometrit = maiden_välinenpituus(pelaaja[3], pelaaja[3] + 1)
+                            print(f"Matkan välinen etäisyys : {GREEN}{round((kilometrit), 0)}{RESET} km")
+                            tulos = kilometrit * lentokoneet[i][1]
+                            roundedtulos = round(tulos, 0)
                             pelaaja[3] += 1
+                            print(f"Olet saapunut lentokenttään{GREEN} {pelilauta[pelaaja[3]]}{RESET}!")
+                            print(f"Tuotetut päästöt {GREEN}{roundedtulos}{RESET} kg")
+                            input(f"{GREEN}Paina ENTER jatkaaksesi {RESET}")
+                            pelaaja[2] += roundedtulos
+
                         oikea_inputti = True
 
 
@@ -128,9 +158,27 @@ def lento(pelaaja, pelilauta):
         except ValueError:
             print(f"Väärä valinta. Valitse lentokone {BLUE} (0 - 6){RESET}{GREEN}!")
 
+def pelinaloittaja(main):
+    maali = []
+    kun_kaikki_saapuu = False
+    while not kun_kaikki_saapuu:
+        main(heittää_noppaa)
+        for pelaaja in pelaajat:
+            if pelaaja[3] == 9:
+                maali.append(pelaaja)
+                pelaajat.remove(pelaaja)
+        if not pelaajat:
+            input(f"Kaikki ovat päässeet maaliin!{GREEN} Paina ENTER nähdääksesi pisteet {RESET} \n")
+            for voittaja in maali:
+                voittaja_lista = []
+                nimi, raha, päästöt, paikka, vuorot = voittaja
+                pisteet = vuorot / päästöt
+                voittaja_lista.append((nimi, pisteet * 10000))
+                for nimi, pisteet in voittaja_lista:
+                    print(f" - {nimi}, pisteet {GREEN}{pisteet}{RESET} ! ")
 
+            kun_kaikki_saapuu = True
 
-main(heittää_noppaa)
-print(tulokset)
-print(pelaajat)
+pelinaloittaja(main)
+
 
