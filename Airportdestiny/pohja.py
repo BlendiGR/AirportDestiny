@@ -1,5 +1,5 @@
 import asetukset
-
+from Musiikki import musat
 from resources import pelilauta
 from lentokoneet import lentokone_esittely
 from NoppaPeli import heittää_noppaa, heittojen_tulostus
@@ -22,6 +22,7 @@ example = BLUE + r'''
                 |_|                                                 |___/ 
 ''' + RESET
 print(example)
+musat()
 input(f"{BLUE} Tervetuloa Airport Destiny peliin! {RESET} Peliä voi pelata 1 - 4 henkilöä. Peli arpoaa satunnaisesti 10 lentoaseman reitin. \n Vähäisimillä päästöillä kohdemaahan saapunut pelaaja voittaa pelin. {GREEN} (Paina ENTER jatkaaksesi){RESET}")
 
 # PELAAJAN MÄÄRÄ -----------------------------------------------------------------
