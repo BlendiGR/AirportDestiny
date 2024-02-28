@@ -84,15 +84,16 @@ intro_tekstit()
 tulokset = []
 def main(heittää_noppaa):
     heittojen_tulostus(pelaajat)
-    vastaus2 = input(f"haluatko ostaa lennon toiseen maahan (1), heittää noppaa uudelleen (2) vai kompensoida päästöjä? (3)")
-    if vastaus2 == "1":
-        #lento()
-        print("lenttää")
-    elif vastaus2 == "2":
-        noppa = heittää_noppaa()
-        print(f"pelaajan {pelaaja[0]} silmäluku on {noppa}")
-    elif vastaus2 == "3":
-        print("kompensoida päästöjä")
+    for pelaaja in pelaajat:
+        vastaus2 = input(f"{pelaaja[0]} haluatko ostaa lennon toiseen maahan (1), heittää noppaa uudelleen (2) vai kompensoida päästöjä? (3)")
+        if vastaus2 == "1":
+            #lento()
+            print("lenttää")
+        elif vastaus2 == "2":
+            noppa = heittää_noppaa()
+            print(f"pelaajan {pelaaja[0]} silmäluku on {noppa}")
+        elif vastaus2 == "3":
+            print("kompensoida päästöjä")
 
 
 
