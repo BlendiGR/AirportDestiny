@@ -1,7 +1,7 @@
 import asetukset
 from Musiikki import musat
 from resources import pelilauta
-from lentokoneet import lentokone_esittely
+from lentokoneet import lentokone_esittely, lentokoneet, lentokoneet_esittely_stripped
 from NoppaPeli import heittää_noppaa, heittojen_tulostus
 
 
@@ -50,7 +50,7 @@ def pelaaja_nimi(määrä):
         while True:
             name = input(f" Mikä on pelaajan {i} nimi: ").strip()
             if name and name not in nimet:
-                pelaajat.append([name, 0])
+                pelaajat.append([name, 0, 0, 0]) #NIMI, RAHA, PÄÄSTÖT, PAIKKA 0 - 10
                 nimet.add(name)
                 break
             else:
@@ -75,29 +75,62 @@ def intro_tekstit():
     input(f"{GREEN}Paina ENTER jatkaaksesi{RESET}")
     input(f"Aloitamme pelin {GREEN}{pelilauta[0]}:issa {RESET} ja seuraavana pysäkkinä on {GREEN}{pelilauta[1]}{RESET}. {GREEN}(Paina ENTER jatkaaksesi){RESET}")
 
+
 määrä = määrä_määrittely()
 pelaajat = pelaaja_nimi(määrä)
-
 intro_tekstit()
 #ALOITETAAN PELI ----------------------------------------------------------------------------------------------------
+
+
 
 tulokset = []
 def main(heittää_noppaa):
     heittojen_tulostus(pelaajat)
     for pelaaja in pelaajat:
-        vastaus2 = input(f"{pelaaja[0]} haluatko ostaa lennon toiseen maahan (1), heittää noppaa uudelleen (2) vai kompensoida päästöjä? (3)")
-        if vastaus2 == "1":
-            #lento()
+        vastaus2 = int(input(f"{pelaaja[0]} Haluatko ostaa lennon toiseen maahan {BLUE}(1){RESET}, heittää noppaa uudelleen {BLUE}(2){RESET} vai kompensoida päästöjä? {BLUE}(3){RESET}"))
+        if vastaus2 == 1:
+            lento(pelaaja, pelilauta)
             print("lenttää")
-        elif vastaus2 == "2":
+        elif vastaus2 == 2:
             noppa = heittää_noppaa()
             print(f"pelaajan {pelaaja[0]} silmäluku on {noppa}")
-        elif vastaus2 == "3":
+        elif vastaus2 == 3:
             print("kompensoida päästöjä")
+
+def lento(pelaaja, pelilauta):
+    print('''
+    1. Sähkölentokone, Hinta 6000, päästöt 0.25kg/km
+    2. Hybridi helikopteri, Hinta 5000, päästöt 0,30kg/km
+    3. Sähköliitokone, Hinta 4000, päästöt 0,35kg/km
+    4. Biodiesel Jet, Hinta 3000, päästöt 0,40kg/km
+    5. Sähköhelikopteri, Hinta 2000, päästöt 0,45kg/km
+    6. Aurinkovoimaraketti, Hinta 1000, päästöt 0,50kg/km
+    ''')
+    oikea_inputti = False
+    while not oikea_inputti:
+        try:
+            lentovalinta = int(input(f"{pelaaja[0]} Valitse lentokone{BLUE} (0 - 6){RESET}{GREEN} (Saldo : {pelaaja[1]}, Päästöt {pelaaja[2]}) : {RESET} "))
+
+            for i in range(len(lentokoneet)):
+                if i == lentovalinta - 1:
+                    if pelaaja[1] >= lentokoneet[i][0]:
+                        pelaaja[1] -= lentokoneet[i][0]
+                        print(f"Saldosi nyt {GREEN}{pelaaja[1]}{RESET}.")
+                        print(f"Valittu lentokone : {lentokoneet_esittely_stripped[i]}")
+                        if pelaaja[3] < len(pelilauta):
+                            pelaaja[3] += 1
+                        oikea_inputti = True
+
+
+                    else:
+                        print(f"Sinulla ei riitä raha valitse toinen lentokone.")
+
+        except ValueError:
+            print(f"Väärä valinta. Valitse lentokone {BLUE} (0 - 6){RESET}{GREEN}!")
 
 
 
 main(heittää_noppaa)
 print(tulokset)
-
+print(pelaajat)
 

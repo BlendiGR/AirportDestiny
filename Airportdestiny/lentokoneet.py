@@ -5,8 +5,10 @@ BLUE = '\033[34m'
 RESET = '\033[0m'
 
 
+lentokoneet_esittely_stripped = ("Sähkölentokone", "Hybridi Helikopteri", "Sähköliitokone", "Biodiesel Jet", "Sähköhelikopteri", "Aurinkoivoima Raketti")
+
 lentokone_esittely = (f'''
-{BLUE}1. Sähkölentokone Ultra{RESET}
+{BLUE}1. Sähkölentokone{RESET}
 
 {GREEN}CO2 Päästöt: 0.25 kg/km
 Hinta: 6000€{RESET}
@@ -18,7 +20,7 @@ Kuvaus: Huipputeknologian nollapäästöinen lentokone, joka tarjoaa vertaansa v
 Hinta: 5000€{RESET}
 Kuvaus: Sähkömoottoreiden ja perinteisen polttoaineen yhdistelmä tarjoaa tasapainon vähentyneiden päästöjen ja luotettavan suorituskyvyn välillä.
  ''', f'''
-{BLUE}Sähköliitokone Pro{RESET}
+{BLUE}Sähköliitokone{RESET}
 
 {GREEN}CO2 Päästöt: 0.35 kg/km
 Hinta: 4000€{RESET}
@@ -30,7 +32,7 @@ Kuvaus: Edistyneellä akkuteknologialla varustettu sähköliitokone on suunnitel
 Hinta: 3000€{RESET}
 Kuvaus: Kestävillä biopolttoaineilla toimiva jet asettaa uuden standardin ympäristöystävälliselle nopealle matkustamiselle saavutettavaan hintaan.
  ''',f'''
-{BLUE}Sähköhelikopteri Mini{RESET}
+{BLUE}Sähköhelikopteri{RESET}
 
 {GREEN}CO2 Päästöt: 0.45 kg/km
 Hinta: 2000€{RESET}
