@@ -1,10 +1,11 @@
 import asetukset
+
 from resources import pelilauta
 from lentokoneet import lentokone_esittely
 from NoppaPeli import heittää_noppaa, heittojen_tulostus
 
 import random
-#VÄRIKOODIT ----------------------------------------------------------------------
+# VÄRIKOODIT ----------------------------------------------------------------------
 RED = '\033[31m'
 GREEN = '\033[32m'
 YELLOW = '\033[33m'
