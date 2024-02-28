@@ -4,6 +4,7 @@ from resources import pelilauta
 from lentokoneet import lentokone_esittely
 from NoppaPeli import heittää_noppaa, heittojen_tulostus
 
+
 import random
 # VÄRIKOODIT ----------------------------------------------------------------------
 RED = '\033[31m'
