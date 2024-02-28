@@ -12,6 +12,5 @@ def heittojen_tulostus(pelaajat):
 
 
 heittää_noppaa()
-heittojen_tulostus()
 
 
