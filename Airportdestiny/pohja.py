@@ -76,28 +76,10 @@ def intro_tekstit():
 
 määrä = määrä_määrittely()
 pelaajat = pelaaja_nimi(määrä)
+heittojen_tulostus(pelaajat)
 intro_tekstit()
-
 #ALOITETAAN PELI ----------------------------------------------------------------------------------------------------
 
-tulokset = []
-def main(heittää_noppaa):
-    for pelaaja in pelaajat:
-        vastaus1 = input(f"{pelaaja[0]} Heitä noppaa: paina [ENTER] heittääksesi noppaa: ")
-        if vastaus1 == "":
-            noppa = heittää_noppaa()
-            print(f"pelaajan {pelaaja[0]} silmäluku on {noppa}")
-            vastaus2 = input(f"haluatko ostaa lennon toiseen maahan (1), heittää noppaa uudelleen (2) vai kompensoida päästöjä? (3)")
-            if vastaus2 == "1":
-                #lento()
-                print("lenttää")
-            elif vastaus2 == "2":
-                noppa = heittää_noppaa()
-                print(f"pelaajan {pelaaja[0]} silmäluku on {noppa}")
-            elif vastaus2 == "3":
-                print("kompensoida päästöjä")
 
 
 
-main(heittää_noppaa)
-print(tulokset)
