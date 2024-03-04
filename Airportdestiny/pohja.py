@@ -163,6 +163,7 @@ def pelinaloittaja(main):
     kun_kaikki_saapuu = False
     while not kun_kaikki_saapuu:
         main(heittää_noppaa)
+        easter_egg()
         for pelaaja in pelaajat:
             if pelaaja[3] == 9:
                 maali.append(pelaaja)

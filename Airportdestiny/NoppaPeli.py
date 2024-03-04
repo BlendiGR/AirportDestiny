@@ -49,4 +49,6 @@ def heittojen_tulostus(pelaajat):
     print("Kaikki pelaajat ovat heittäneet noppaa.")
     return pelaajat
 
+def easter_egg():
+    luku = random.randint(1, 1000)
 
