@@ -49,6 +49,16 @@ def heittojen_tulostus(pelaajat):
     print("Kaikki pelaajat ovat heittäneet noppaa.")
     return pelaajat
 
-def easter_egg():
-    luku = random.randint(1, 1000)
+def easter_egg(pelaaja):
+    luku = random.randint(1, 200)
+    return easter_egg1(pelaaja, luku)
 
+
+def easter_egg1(pelaaja, luku): #Pelaaja löytää rahaa
+    if luku == 1:
+        input(f'{pelaaja[0]}: Löysi 1000 rahanipun lentokentältä.{GREEN} Paina ENTER jatkaaksesi...{RESET}')
+        pelaaja[1] += 1000
+        print(f'Pelaaja {pelaaja[0]} saldo on{GREEN} {pelaaja[1]}{RESET}')
+        return
+    if luku == 2:
+        input(f'')

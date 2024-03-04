@@ -2,7 +2,7 @@ import asetukset
 from Musiikki import musat
 from resources import pelilauta, maiden_välinenpituus
 from lentokoneet import lentokone_esittely, lentokoneet, lentokoneet_esittely_stripped
-from NoppaPeli import heittää_noppaa, heittojen_tulostus
+from NoppaPeli import heittää_noppaa, heittojen_tulostus, easter_egg
 
 
 import random
@@ -84,12 +84,13 @@ intro_tekstit()
 
 
 tulokset = []
-def main(heittää_noppaa):
+def main(heittää_noppaa, easter_egg):
     heittojen_tulostus(pelaajat)
     valitsija = False
     while not valitsija:
         try:
             for pelaaja in pelaajat:
+                easter_egg(pelaaja)
                 vastaus2 = int(input(f"{pelaaja[0]} Haluatko ostaa lennon toiseen maahan {BLUE}(1){RESET}, heittää noppaa uudelleen {BLUE}(2){RESET} vai kompensoida päästöjä? {BLUE}(3) : {RESET}"))
                 print(f"{pelaaja[4]}. Vuoro! ")
                 if vastaus2 == 1:
@@ -158,12 +159,11 @@ def lento(pelaaja, pelilauta):
         except ValueError:
             print(f"Väärä valinta. Valitse lentokone {BLUE} (0 - 6){RESET}{GREEN}!")
 
-def pelinaloittaja(main):
+def pelinaloittaja(main, easter_egg):
     maali = []
     kun_kaikki_saapuu = False
     while not kun_kaikki_saapuu:
-        main(heittää_noppaa)
-        easter_egg()
+        main(heittää_noppaa, easter_egg)
         for pelaaja in pelaajat:
             if pelaaja[3] == 9:
                 maali.append(pelaaja)
@@ -180,6 +180,6 @@ def pelinaloittaja(main):
 
             kun_kaikki_saapuu = True
 
-pelinaloittaja(main)
+pelinaloittaja(main,easter_egg)
 
 
