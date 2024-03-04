@@ -20,11 +20,11 @@ def kivi_sakset_paperi(pelaaja):
                  (pelaajan_valinta == 'sakset' and tietokoneen_valinta == 'paperi') or \
                  (pelaajan_valinta == 'paperi' and tietokoneen_valinta == 'kivi'):
                 print("Voitit!")
-                pelaajat[?][1] *= 3
+                pelaaja[1] *= 3
                 break
             else:
                 print("Hävisit! Joudut luovuttamaan 50% omaisuudestasi")
-                pelaajat[?][1] *= 0.5
+                pelaaja[1] *= 0.5
 
                 break
         elif pelaajan_valinta != valinnat:
@@ -36,6 +36,6 @@ pelikerrat = 0
 
 while pelikerrat < 2:
     print("\nPelikerta", pelikerrat + 1)
-    tulos = kivi_sakset_paperi()
+    tulos = kivi_sakset_paperi(pelaaja)
     if tulos != "virhe":
         pelikerrat += 1

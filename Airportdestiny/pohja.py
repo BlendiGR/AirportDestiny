@@ -97,7 +97,7 @@ def main(heittää_noppaa, easter_egg):
                     lento(pelaaja, pelilauta)
                 elif vastaus2 == 2:
                     noppa = heittää_noppaa()
-                    input(f"{pelaaja[0]}Heitti silmäluvun {GREEN}{noppa}{RESET}! {GREEN} Paina ENTER jatkaaksesi :  {RESET}")
+                    input(f"{pelaaja[0]} Heitti silmäluvun {GREEN}{noppa}{RESET}! {GREEN} Paina ENTER jatkaaksesi :  {RESET}")
                     pelaaja[1] += noppa * 1000
                     input(f"{pelaaja[0]} sai {noppa * 1000} lisää rahaa! Saldo nyt : {pelaaja[1]} \n {GREEN} Paina ENTER jatkaaksesi {RESET} : ")
                 elif vastaus2 == 3:
