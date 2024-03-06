@@ -33,7 +33,7 @@ def kivi_sakset_paperi(pelaaja):
 
 
 pelikerrat = 0
-
+pelaaja = [0, 1]
 while pelikerrat < 2:
     print("\nPelikerta", pelikerrat + 1)
     tulos = kivi_sakset_paperi(pelaaja)

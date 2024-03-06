@@ -118,6 +118,7 @@ def kivi_sakset_paperi(pelaaja):
 
 
 pelikerrat = 0
+pelaaja = [0, 1]
 
 while pelikerrat < 2:
     print("\nPelikerta", pelikerrat + 1)
@@ -134,3 +135,5 @@ def easter_egg1(pelaaja, luku, kivi_sakset_paperi):
         return
     if luku == 2:
         kivi_sakset_paperi(pelaaja)
+
+print('moi')
