@@ -75,3 +75,4 @@ def kivi_paperi_sakset(pelaaja):
     lopeta_musa()
     musat()
 
+#sop
