@@ -6,7 +6,7 @@ pelaaja = ["jarkko",0,0,2]
 
 def kivi_paperi_sakset(pelaaja):
     kivi_paperi_sakset_musa()
-    print(f"{pelaaja} olet joutunut kaksinkamppailuun pelissä kivi, paperi, sakset\n"
+    print(f"{pelaaja[0]} olet joutunut kaksinkamppailuun pelissä kivi, paperi, sakset\n"
           f"- Voitto = saat 3x omaisuutesi määrän\n"
           f"- Tasapeli = et menetä mitään\n"
           f"- Häviö = menetät 50% omaisuudestasi.")
@@ -65,6 +65,7 @@ def kivi_paperi_sakset(pelaaja):
             print("Voitit!")
         elif tietokoneen_valinta == käyttäjä_valinta:
             print("Tasapeli!")
-    return lopeta_musa(), musat()
+    print(f"Rahatilanne pelaaja {pelaaja[0]}: {pelaaja[1]}")
+    lopeta_musa()
+    musat()
 
-kivi_paperi_sakset(pelaaja)

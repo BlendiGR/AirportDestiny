@@ -1,5 +1,5 @@
 import random
-from pelaajan_valinnat import kivi_sakset_paperi
+from pelaajan_valinnat import kivi_paperi_sakset
 from Musiikki import lopeta_musa, rahanippu
 
 RED = '\033[31m'
@@ -52,8 +52,8 @@ def heittojen_tulostus(pelaajat):
     return pelaajat
 
 def easter_egg(pelaaja):
-    luku = random.randint(1, 200)
-    return easter_egg1(pelaaja, luku, kivi_sakset_paperi)
+    luku = random.randint(1, 4)
+    return easter_egg1(pelaaja, luku, kivi_paperi_sakset)
 
 
 
@@ -70,5 +70,5 @@ def easter_egg1(pelaaja, luku, kivi_sakset_paperi):
         return
     if luku == 2:
         lopeta_musa()
-        kivi_sakset_paperi(pelaaja)
+        kivi_paperi_sakset(pelaaja)
 
