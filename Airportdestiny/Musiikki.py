@@ -6,3 +6,4 @@ def musat():
     pygame.mixer.music.set_volume(0.10)
     pygame.mixer.music.play()
 
+def kivi_paperi_sakset_musa():
