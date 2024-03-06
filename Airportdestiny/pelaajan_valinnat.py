@@ -1,38 +1,68 @@
 import random
-### KESKEN t: LEEVI:)
+
+pelaaja = "jarkko"
+
 def kivi_sakset_paperi(pelaaja):
-    print(f"Valitsit kaksinkamppailun pelissä kivi, sakset, paperi\n"
+    print(f"Olet joutunut kaksinkamppailuun pelissä kivi, paperi, sakset\n"
           f"- Voitto = saat 3x omaisuutesi määrän\n"
-          f"- Tasapeli = et menetä mitään mutta voit yrittää uudestaan\n"
+          f"- Tasapeli = et menetä mitään\n"
           f"- Häviö = menetät 50% omaisuudestasi.")
-    
-    valinnat = ['kivi', 'sakset', 'paperi']
 
-    while True:
-        pelaajan_valinta = input("Valitse kivi, sakset tai paperi: ").lower()
-        tietokoneen_valinta = random.choice(valinnat)
-        print("Tietokone valitsi:", tietokoneen_valinta)
-        if pelaajan_valinta in valinnat:
-            if pelaajan_valinta == tietokoneen_valinta:
-                print("Tasapeli!")
-                break
-            elif (pelaajan_valinta == 'kivi' and tietokoneen_valinta == 'sakset') or \
-                 (pelaajan_valinta == 'sakset' and tietokoneen_valinta == 'paperi') or \
-                 (pelaajan_valinta == 'paperi' and tietokoneen_valinta == 'kivi'):
-                print("Voitit!")
-                pelaaja[1] *= 3
-                break
-            else:
-                print("Hävisit! Joudut luovuttamaan 50% omaisuudestasi")
-                pelaaja[1] *= 0.5
 
-                break
-        elif pelaajan_valinta != valinnat:
-            print("Virheellinen syöte")
-    pelikerrat = 0
-    pelaaja = [0, 1]
-    while pelikerrat < 2:
-        print("\nPelikerta", pelikerrat + 1)
-        tulos = kivi_sakset_paperi(pelaaja)
-        if tulos != "virhe":
-            pelikerrat += 1
+    kivi = '''
+        _______
+    ---'   ____)
+          (_____)
+          (_____)
+          (____)
+    ---.__(___)
+    '''
+
+    paperi = '''
+        _______
+    ---'   ____)____
+              ______)
+              _______)
+             _______)
+    ---.__________)
+    '''
+
+    sakset = '''
+        _______
+    ---'   ____)____
+              ______)
+           __________)
+          (____)
+    ---.__(___)
+    '''
+    kuvat = [kivi, paperi, sakset]
+
+
+
+    käyttäjä_valinta = int(input("Mikä valintasi? Syötä: (0) = kivi, (1) = paperi (2) = sakset \n"))
+    if käyttäjä_valinta >= 3 or käyttäjä_valinta < 0:
+        print("Virheellinen syöte, hävisit!")
+    else:
+        print(kuvat[käyttäjä_valinta])
+
+        tietokoneen_valinta = random.randint(0, 2)
+        print("Tietokone valitsi:")
+        print(kuvat[tietokoneen_valinta])
+
+
+        if käyttäjä_valinta == 0 and tietokoneen_valinta == 2:
+            pelaaja[1] * 3
+            print("Voitit!")
+        elif tietokoneen_valinta == 0 and käyttäjä_valinta == 2:
+            pelaaja[1] * 0.5
+            print("Hävisit!")
+        elif tietokoneen_valinta > käyttäjä_valinta:
+            pelaaja[1] * 0.5
+            print("Hävisit!")
+        elif käyttäjä_valinta > tietokoneen_valinta:
+            pelaaja[1] * 3
+            print("Voitit!")
+        elif tietokoneen_valinta == käyttäjä_valinta:
+            print("Tasapeli!")
+
+kivi_sakset_paperi(pelaaja)
