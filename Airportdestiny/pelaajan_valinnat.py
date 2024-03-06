@@ -1,9 +1,13 @@
 import random
+from Musiikki import *
+
 
 pelaaja = "jarkko"
 
-def kivi_sakset_paperi(pelaaja):
-    print(f"Olet joutunut kaksinkamppailuun pelissä kivi, paperi, sakset\n"
+def kivi_paperi_sakset(pelaaja):
+    lopeta_musa()
+    kivi_paperi_sakset_musa()
+    print(f"{pelaaja} olet joutunut kaksinkamppailuun pelissä kivi, paperi, sakset\n"
           f"- Voitto = saat 3x omaisuutesi määrän\n"
           f"- Tasapeli = et menetä mitään\n"
           f"- Häviö = menetät 50% omaisuudestasi.")
@@ -37,8 +41,6 @@ def kivi_sakset_paperi(pelaaja):
     '''
     kuvat = [kivi, paperi, sakset]
 
-
-
     käyttäjä_valinta = int(input("Mikä valintasi? Syötä: (0) = kivi, (1) = paperi (2) = sakset \n"))
     if käyttäjä_valinta >= 3 or käyttäjä_valinta < 0:
         print("Virheellinen syöte, hävisit!")
@@ -64,5 +66,7 @@ def kivi_sakset_paperi(pelaaja):
             print("Voitit!")
         elif tietokoneen_valinta == käyttäjä_valinta:
             print("Tasapeli!")
+    lopeta_musa()
+    musat()
 
-kivi_sakset_paperi(pelaaja)
+kivi_paperi_sakset(pelaaja)
