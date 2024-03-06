@@ -14,3 +14,10 @@ def kivi_paperi_sakset_musa():
     pygame.mixer.music.load("kivipaperisakset_musa.mp3")
     pygame.mixer.music.set_volume(0.10)
     pygame.mixer.music.play()
+
+def rahanippu():
+    pygame.init()
+    pygame.mixer.init()
+    pygame.mixer.music.load("Rahanippu.mp3")
+    pygame.mixer.music.set_volume(0.10)
+    pygame.mixer.music.play()
