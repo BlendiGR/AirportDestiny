@@ -4,7 +4,7 @@ from resources import pelilauta, maiden_välinenpituus
 from lentokoneet import lentokone_esittely, lentokoneet, lentokoneet_esittely_stripped
 from NoppaPeli import heittää_noppaa, heittojen_tulostus, easter_egg
 
-
+import time
 import random
 # VÄRIKOODIT ----------------------------------------------------------------------
 RED = '\033[31m'
@@ -22,7 +22,9 @@ example = BLUE + r'''
  /_/   \_\_|_|  | .__/ \___/|_|   \__| |____/ \___||___/\__|_|_| |_|\__, |
                 |_|                                                 |___/ 
 ''' + RESET
-print(example)
+for char in example:
+    print(char, end='', flush=True)
+    time.sleep(0.003)
 musat()
 input(f"{BLUE} Tervetuloa Airport Destiny peliin! {RESET} Peliä voi pelata 1 - 4 henkilöä. Peli arpoaa satunnaisesti 10 lentoaseman reitin. \n Vähäisimillä päästöillä kohdemaahan saapunut pelaaja voittaa pelin. {GREEN} (Paina ENTER jatkaaksesi){RESET}")
 
