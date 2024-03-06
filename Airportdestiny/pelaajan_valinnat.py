@@ -1,11 +1,10 @@
 import random
-from Musiikki import *
+from Musiikki import musat, kivi_paperi_sakset_musa, lopeta_musa
 
 
-pelaaja = "jarkko"
+pelaaja = ["jarkko",0,0,2]
 
 def kivi_paperi_sakset(pelaaja):
-    lopeta_musa()
     kivi_paperi_sakset_musa()
     print(f"{pelaaja} olet joutunut kaksinkamppailuun pelissä kivi, paperi, sakset\n"
           f"- Voitto = saat 3x omaisuutesi määrän\n"
@@ -66,7 +65,6 @@ def kivi_paperi_sakset(pelaaja):
             print("Voitit!")
         elif tietokoneen_valinta == käyttäjä_valinta:
             print("Tasapeli!")
-    lopeta_musa()
-    musat()
+    return lopeta_musa(), musat()
 
 kivi_paperi_sakset(pelaaja)
