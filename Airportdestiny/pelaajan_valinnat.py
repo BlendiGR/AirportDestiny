@@ -1,8 +1,14 @@
 import random
 from Musiikki import musat, kivi_paperi_sakset_musa, lopeta_musa
 
+RED = '\033[31m'
+GREEN = '\033[32m'
+YELLOW = '\033[33m'
+BLUE = '\033[34m'
+RESET = '\033[0m'
 
-pelaaja = ["jarkko",0,0,2]
+
+
 
 def kivi_paperi_sakset(pelaaja):
     kivi_paperi_sakset_musa()
@@ -65,7 +71,7 @@ def kivi_paperi_sakset(pelaaja):
             print("Voitit!")
         elif tietokoneen_valinta == käyttäjä_valinta:
             print("Tasapeli!")
-    print(f"Rahatilanne pelaaja {pelaaja[0]}: {pelaaja[1]}")
+    print(f"Rahatilanne pelaaja {pelaaja[0]}: {GREEN}{pelaaja[1]}{RESET}")
     lopeta_musa()
     musat()
 
