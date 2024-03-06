@@ -48,7 +48,7 @@ def pelaaja_nimi(määrä):
     nimet = set()
     for i in range(1, määrä + 1):
         while True:
-            name = input(f" Mikä on pelaajan {i} nimi: ").strip()
+            name = input(f"Mikä on pelaajan {i} nimi: ").strip()
             if name and name not in nimet:
                 pelaajat.append([name, 0, 0, 0, 1]) #NIMI, RAHA, PÄÄSTÖT, PAIKKA 0 - 10, VUOROT#################################################################
                 nimet.add(name)
@@ -181,5 +181,3 @@ def pelinaloittaja(main, easter_egg):
             kun_kaikki_saapuu = True
 
 pelinaloittaja(main,easter_egg)
-
-

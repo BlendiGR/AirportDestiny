@@ -29,13 +29,10 @@ def kivi_sakset_paperi(pelaaja):
                 break
         elif pelaajan_valinta != valinnat:
             print("Virheellinen syöte")
-
-
-
-pelikerrat = 0
-pelaaja = [0, 1]
-while pelikerrat < 2:
-    print("\nPelikerta", pelikerrat + 1)
-    tulos = kivi_sakset_paperi(pelaaja)
-    if tulos != "virhe":
-        pelikerrat += 1
+    pelikerrat = 0
+    pelaaja = [0, 1]
+    while pelikerrat < 2:
+        print("\nPelikerta", pelikerrat + 1)
+        tulos = kivi_sakset_paperi(pelaaja)
+        if tulos != "virhe":
+            pelikerrat += 1
