@@ -52,16 +52,16 @@ def kivi_paperi_sakset(pelaaja):
 
 
         if käyttäjä_valinta == 0 and tietokoneen_valinta == 2:
-            pelaaja[1] * 3
+            pelaaja[1] *= 3
             print("Voitit!")
         elif tietokoneen_valinta == 0 and käyttäjä_valinta == 2:
-            pelaaja[1] * 0.5
+            pelaaja[1] *= 0.5
             print("Hävisit!")
         elif tietokoneen_valinta > käyttäjä_valinta:
-            pelaaja[1] * 0.5
+            pelaaja[1] *= 0.5
             print("Hävisit!")
         elif käyttäjä_valinta > tietokoneen_valinta:
-            pelaaja[1] * 3
+            pelaaja[1] *= 3
             print("Voitit!")
         elif tietokoneen_valinta == käyttäjä_valinta:
             print("Tasapeli!")

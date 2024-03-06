@@ -29,7 +29,7 @@ musat()
 input(f"{BLUE} Tervetuloa Airport Destiny peliin! {RESET} Peliä voi pelata 1 - 4 henkilöä. Peli arpoaa satunnaisesti 10 lentoaseman reitin. \n Vähäisimillä päästöillä kohdemaahan saapunut pelaaja voittaa pelin. {GREEN} (Paina ENTER jatkaaksesi){RESET}")
 
 # PELAAJAN MÄÄRÄ -----------------------------------------------------------------
-def määrä_määrittely():1
+def määrä_määrittely():
     while True:
         try:
             määrä = int(input("Montako pelaajaa? (Max 4) : "))
