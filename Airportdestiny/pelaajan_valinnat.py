@@ -24,8 +24,7 @@ def kivi_paperi_sakset(pelaaja):
           (_____)
           (_____)
           (____)
-    ---.__(___)
-    '''
+    ---.__(___)'''
 
     paperi = '''
         _______
@@ -33,8 +32,7 @@ def kivi_paperi_sakset(pelaaja):
               ______)
               _______)
              _______)
-    ---.__________)
-    '''
+    ---.__________)'''
 
     sakset = '''
         _______
@@ -42,33 +40,29 @@ def kivi_paperi_sakset(pelaaja):
               ______)
            __________)
           (____)
-    ---.__(___)
-    '''
+    ---.__(___)'''
 
     paperi1 = '''
-        _______
-  ____(____   `---
- (______          
-(_______
- (_______
-   (__________.---
-'''
-    kivi1 = '''
-     _____
-   _/__   `---
-  (_
- (__
-  (__         
-   (______.---
-'''
-    sakset1 = '''
             _______
-       ____(____    '---
-     (______
-    (__________
-           (____)
-            (___)__.---
-'''
+      ____(____   `---
+     (______          
+    (_______
+     (_______
+      (__________.---'''
+    kivi1 = '''
+         _____
+       _/__   `---
+      (_
+     (__
+      (__         
+       (______.---'''
+    sakset1 = '''
+               _______
+         ____(____    '---
+        (______
+        (__________
+             (____)
+              (___)__.---'''
 
 
     kuvat = [kivi, paperi, sakset]
@@ -78,9 +72,8 @@ def kivi_paperi_sakset(pelaaja):
         print("Virheellinen syöte, hävisit!")
     else:
         tietokoneen_valinta = random.randint(0, 2)
-        print("Tietokone valitsi:")
-        print(f"{kuvat[käyttäjä_valinta]}     {kuvat_tietokone[tietokoneen_valinta]}")
-
+        print("Valitsit:")
+        print(f"{kuvat[käyttäjä_valinta]} \n        Sinä valitsit:                 {kuvat_tietokone[tietokoneen_valinta]}")
         if käyttäjä_valinta == 0 and tietokoneen_valinta == 2:
             pelaaja[1] *= 3
             print("Voitit!")
