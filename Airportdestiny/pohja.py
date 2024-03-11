@@ -7,6 +7,7 @@ from apuvalikko import help_menu
 import time
 import random
 # VÄRIKOODIT ----------------------------------------------------------------------
+
 RED = '\033[31m'
 GREEN = '\033[32m'
 YELLOW = '\033[33m'
@@ -14,6 +15,7 @@ BLUE = '\033[34m'
 RESET = '\033[0m'
 
 #INTRO-----------------------------------------------------------------------------
+
 example = BLUE + r'''
      _    _                       _     ____            _   _             
     / \  (_)_ __ _ __   ___  _ __| |_  |  _ \  ___  ___| |_(_)_ __  _   _ 
@@ -64,12 +66,12 @@ def pelaaja_nimi(määrä):
 
 #REITTIEN KERTOMINEN JA LENTOKONE VAIHTOEHDOT -----------------------------------------------------------------------
 def intro_tekstit():
-    print("Reitti on seuraavanlainen : ")
+    print("\nReitti on seuraavanlainen : ")
     #PRINTATAAN REITIT NUMEROJÄRJESTYKESSÄ ALKAEN NRO 1 -------------------------------------------------------------------
     for i, lentoasema in enumerate(pelilauta, start=1):
         print(f"{i} -{GREEN} {lentoasema}{RESET}")
 
-    input(f"Aloitus summa on 1000€ ja tavoitteena on lentää {pelilauta[-1]}:iin mahdolisimman vähäisillä päästöillä. {GREEN} Paina ENTER jatkaaksesi{RESET}")
+    input(f"\nAloitus summa on 1000€ ja tavoitteena on lentää {pelilauta[-1]}:iin mahdolisimman vähäisillä päästöillä. {GREEN} Paina ENTER jatkaaksesi{RESET}")
     input(f"1 nopan silmäluku vastaa 1000€ ja kalliimat lentokoneet päästävät vähiten. {GREEN} Paina ENTER nähdääksesi vaihtoehdot.{RESET}")
     for lentokone in lentokone_esittely:
         print(lentokone)
@@ -93,10 +95,10 @@ def main(heittää_noppaa, easter_egg):
         try:
             for pelaaja in pelaajat:
                 easter_egg(pelaaja)
-                vastaus2 = int(input(f"{pelaaja[0]} Haluatko ostaa lennon toiseen maahan {BLUE}(1){RESET}, heittää noppaa uudelleen {BLUE}(2){RESET} vai kompensoida päästöjä? {BLUE}(3) : {RESET} help menu {BLUE}(4"
+                vastaus2 = int(input(f"\n{pelaaja[0]} Haluatko ostaa lennon toiseen maahan {BLUE}(1){RESET}, heittää noppaa uudelleen {BLUE}(2){RESET} vai kompensoida päästöjä? {BLUE}(3) : {RESET} help menu {BLUE}(4"
                                      f"){RESET} "))
                 print(f"{pelaaja[4]}. Vuoro! ")
-                if vastaus2 == 1:
+                if vastaus2 == 1 and pelaaja[1] > 1000:
                     lento(pelaaja, pelilauta)
                 elif vastaus2 == 2:
                     noppa = heittää_noppaa()
