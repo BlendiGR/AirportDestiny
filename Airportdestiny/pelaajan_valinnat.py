@@ -44,18 +44,42 @@ def kivi_paperi_sakset(pelaaja):
           (____)
     ---.__(___)
     '''
-    kuvat = [kivi, paperi, sakset]
 
+    paperi1 = '''
+        _______
+  ____(____   `---
+ (______          
+(_______
+ (_______
+   (__________.---
+'''
+    kivi1 = '''
+     _____
+   _/__   `---
+  (_
+ (__
+  (__         
+   (______.---
+'''
+    sakset1 = '''
+            _______
+       ____(____    '---
+     (______
+    (__________
+           (____)
+            (___)__.---
+'''
+
+
+    kuvat = [kivi, paperi, sakset]
+    kuvat_tietokone = [kivi1, paperi1, sakset1]
     käyttäjä_valinta = int(input("Mikä valintasi? Syötä: (0) = kivi, (1) = paperi (2) = sakset \n"))
     if käyttäjä_valinta >= 3 or käyttäjä_valinta < 0:
         print("Virheellinen syöte, hävisit!")
     else:
-        print(kuvat[käyttäjä_valinta])
-
         tietokoneen_valinta = random.randint(0, 2)
         print("Tietokone valitsi:")
-        print(kuvat[tietokoneen_valinta])
-
+        print(f"{kuvat[käyttäjä_valinta]}     {kuvat_tietokone[tietokoneen_valinta]}")
 
         if käyttäjä_valinta == 0 and tietokoneen_valinta == 2:
             pelaaja[1] *= 3
