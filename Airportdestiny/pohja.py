@@ -120,7 +120,7 @@ def main(heittää_noppaa, easter_egg):
             valitsija = True
 
         except ValueError:
-            print(f"{RED}Väärä komento!{RESET}")
+            print(f"{RED}Väärä komento!1{RESET}")
 
 
 def lento(pelaaja, pelilauta):
@@ -135,7 +135,7 @@ def lento(pelaaja, pelilauta):
     oikea_inputti = False
     while not oikea_inputti:
         try:
-            lentovalinta = int(input(f"{pelaaja[0]} Valitse lentokone{BLUE} (0 - 6){RESET}{GREEN} (Saldo : {pelaaja[1]}, Päästöt {pelaaja[2]}) : {RESET} "))
+            lentovalinta = int(input(f"{pelaaja[0]} Valitse lentokone{BLUE} (1 - 6){RESET}{GREEN} (Saldo : {pelaaja[1]}, Päästöt {pelaaja[2]}) : {RESET} "))
 
             for i in range(len(lentokoneet)):
                 if i == lentovalinta - 1:

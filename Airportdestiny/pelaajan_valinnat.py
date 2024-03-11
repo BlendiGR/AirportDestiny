@@ -18,51 +18,51 @@ def kivi_paperi_sakset(pelaaja):
           f"- Häviö = menetät 50% omaisuudestasi.")
 
 
-    kivi = '''
+    kivi = GREEN+ '''
         _______
     ---'   ____)
           (_____)
           (_____)
           (____)
-    ---.__(___)'''
+    ---.__(___)''' +RESET
 
-    paperi = '''
+    paperi =GREEN+ '''
         _______
     ---'   ____)____
               ______)
               _______)
              _______)
-    ---.__________)'''
+    ---.__________)''' +RESET
 
-    sakset = '''
+    sakset = GREEN+ '''
         _______
     ---'   ____)____
               ______)
            __________)
           (____)
-    ---.__(___)'''
+    ---.__(___)''' +RESET
 
-    paperi1 = '''
+    paperi1 = BLUE+ ''' 
             _______
       ____(____   `---
      (______          
     (_______
      (_______
-      (__________.---'''
-    kivi1 = '''
+      (__________.---''' +RESET
+    kivi1 = BLUE+ ''' 
          _____
        _/__   `---
       (_
      (__
       (__         
-       (______.---'''
-    sakset1 = '''
+       (______.---''' + RESET
+    sakset1 = BLUE+ '''
                _______
          ____(____    '---
         (______
         (__________
              (____)
-              (___)__.---'''
+              (___)__.---''' +RESET
 
 
     kuvat = [kivi, paperi, sakset]
@@ -73,7 +73,7 @@ def kivi_paperi_sakset(pelaaja):
     else:
         tietokoneen_valinta = random.randint(0, 2)
         print("Valitsit:")
-        print(f"{kuvat[käyttäjä_valinta]} \n        Sinä valitsit:                 {kuvat_tietokone[tietokoneen_valinta]}")
+        print(f"{kuvat[käyttäjä_valinta]} \n        Tietokone valitsi:                 {kuvat_tietokone[tietokoneen_valinta]}")
         if käyttäjä_valinta == 0 and tietokoneen_valinta == 2:
             pelaaja[1] *= 3
             print("Voitit!")
@@ -92,4 +92,3 @@ def kivi_paperi_sakset(pelaaja):
     lopeta_musa()
     musat()
 
-#sop
