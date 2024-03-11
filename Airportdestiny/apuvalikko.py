@@ -32,5 +32,3 @@ def apukommenot():
         else:
             print("Tuntematon komento.")
 
-help_komento()
-

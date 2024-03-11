@@ -3,6 +3,7 @@ from Musiikki import musat
 from resources import pelilauta, maiden_välinenpituus
 from lentokoneet import lentokone_esittely, lentokoneet, lentokoneet_esittely_stripped
 from NoppaPeli import heittää_noppaa, heittojen_tulostus, easter_egg
+from apuvalikko import help_komento, apukommenot
 
 import time
 import random
@@ -112,6 +113,8 @@ def main(heittää_noppaa, easter_egg):
                     if ooksävarma == "ei":
                         print("Kompensoituminen skipattiin!")
                         break
+                elif vastaus2 ==4:
+                    apukommenot()
                 pelaaja[4] += 1
 
             valitsija = True
@@ -160,6 +163,7 @@ def lento(pelaaja, pelilauta):
 
         except ValueError:
             print(f"Väärä valinta. Valitse lentokone {BLUE} (0 - 6){RESET}{GREEN}!")
+
 
 def pelinaloittaja(main, easter_egg):
     maali = []
