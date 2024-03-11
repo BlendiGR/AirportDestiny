@@ -28,13 +28,15 @@ for char in example:
     print(char, end='', flush=True)
     time.sleep(0.003)
 musat()
-input(f"{BLUE}Tervetuloa Airport Destiny peliin! {RESET} Peliä voi pelata 1 - 4 henkilöä. Peli arpoaa satunnaisesti 10 lentoaseman reitin. \n Vähäisimillä päästöillä kohdemaahan saapunut pelaaja voittaa pelin. {GREEN} (Paina ENTER jatkaaksesi){RESET}")
+input(f"\n{BLUE}Tervetuloa Airport Destiny peliin! {RESET}Peliä voi pelata 1 - 4 henkilöä. Peli arpoo satunnaisesti 10 lentoaseman reitin euroopan suurimmista lentokentistä."
+      f" \nVähäisimillä päästöillä kohdemaahan saapunut pelaaja voittaa pelin."
+      f" {GREEN}\n(Paina ENTER jatkaaksesi)\n{RESET}")
 
 # PELAAJAN MÄÄRÄ -----------------------------------------------------------------
 def määrä_määrittely():
     while True:
         try:
-            määrä = int(input("Montako pelaajaa? (Max 4) : "))
+            määrä = int(input("\nMontako pelaajaa? (Max 4) : "))
             if määrä <= 0 or määrä > 4:
                 print("Sallittu pelaajien määrä on 1 - 4.")
 
@@ -71,13 +73,13 @@ def intro_tekstit():
     for i, lentoasema in enumerate(pelilauta, start=1):
         print(f"{i} -{GREEN} {lentoasema}{RESET}")
 
-    input(f"\nAloitus summa on 1000€ ja tavoitteena on lentää {pelilauta[-1]}:iin mahdolisimman vähäisillä päästöillä. {GREEN} Paina ENTER jatkaaksesi{RESET}")
-    input(f"1 nopan silmäluku vastaa 1000€ ja kalliimat lentokoneet päästävät vähiten. {GREEN} Paina ENTER nähdääksesi vaihtoehdot.{RESET}")
+    input(f"\nAloitus summa on 1000€ ja tavoitteena on lentää {pelilauta[-1]}:iin mahdolisimman vähäisillä päästöillä. {GREEN} \nPaina ENTER jatkaaksesi{RESET}")
+    input(f"1 nopan silmäluku vastaa 1000€. Mitä kalliimpi lento, sitä ympäristöystävällisempi se on.{GREEN}\nPaina ENTER nähdääksesi lentokone vaihtoehdot.{RESET}\n")
     for lentokone in lentokone_esittely:
         print(lentokone)
 
     input(f"{GREEN}Paina ENTER jatkaaksesi{RESET}")
-    input(f"Aloitamme pelin {GREEN}{pelilauta[0]}:issa {RESET} ja seuraavana pysäkkinä on {GREEN}{pelilauta[1]}{RESET}. {GREEN}(Paina ENTER jatkaaksesi){RESET}")
+    input(f"Aloitamme pelin {GREEN}{pelilauta[0]}:issa {RESET}, seuraava kohde on: {GREEN}{pelilauta[1]}{RESET}. {GREEN}(Paina ENTER jatkaaksesi) {RESET}")
 
 
 määrä = määrä_määrittely()
@@ -95,10 +97,9 @@ def main(heittää_noppaa, easter_egg):
         try:
             for pelaaja in pelaajat:
                 easter_egg(pelaaja)
-                vastaus2 = int(input(f"\n{pelaaja[0]} Haluatko ostaa lennon toiseen maahan {BLUE}(1){RESET}, heittää noppaa uudelleen {BLUE}(2){RESET} vai kompensoida päästöjä? {BLUE}(3) : {RESET} help menu {BLUE}(4"
-                                     f"){RESET} "))
-                print(f"{pelaaja[4]}. Vuoro! ")
-                if vastaus2 == 1 and pelaaja[1] > 1000:
+                vastaus2 = int(input(f"\n{pelaaja[0]} Haluatko ostaa lennon toiseen maahan {BLUE}(1){RESET}, heittää noppaa uudelleen {BLUE}(2){RESET} vai kompensoida päästöjä? {BLUE}(3) : {RESET}"))
+                print(f"{YELLOW}{pelaaja[4]}. Vuoro!{RESET}")
+                if vastaus2 == 1:
                     lento(pelaaja, pelilauta)
                 elif vastaus2 == 2:
                     noppa = heittää_noppaa()
@@ -120,7 +121,7 @@ def main(heittää_noppaa, easter_egg):
             valitsija = True
 
         except ValueError:
-            print(f"{RED}Väärä komento!1{RESET}")
+            print(f"{RED}Väärä komento!{RESET}")
 
 
 def lento(pelaaja, pelilauta):
