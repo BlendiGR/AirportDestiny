@@ -21,8 +21,8 @@ def help_menu(komento_input, pelaajat):
     if komento_input == "help":
         print(f"{YELLOW}\n---------------HELP MENU---------------{RESET}")
         print("\nTässä on komentoja, joita voit käyttää :\n")
-        print(f"{GREEN}palaa{RESET} - Jatkaa peliä")
-        print(f"{GREEN}positiot{RESET} - Näytä pelaajien nykyiset positiot ja reitti")
+        print(f"{GREEN}palaa{RESET} - Jatkaaksesi peliä")
+        print(f"{GREEN}positiot{RESET} - Näytä pelaajien tämänhetkiset sijainnit")
         print(f"{GREEN}lentokoneet{RESET} - Näytä nykyiset lentokoneet ja niiden ominaisuudet")
         print(f"{GREEN}quit{RESET} - Lopettaa pelin")
 
@@ -37,9 +37,7 @@ def help_menu(komento_input, pelaajat):
                 elif komento == "positiot":
                     for pelaaja in pelaajat:
                         print(f"Pelaajan {pelaaja[0]} sijainti: {GREEN}{pelilauta[pelaaja[3]]}{RESET}")
-                    break
                 elif komento == "lentokoneet":
-                    for lentokone in lentokone_esittely:
                         print(f"""
                         1. Sähkölentokone, Hinta 6000, päästöt 0.25kg/km
                         2. Hybridi helikopteri, Hinta 5000, päästöt 0,30kg/km
@@ -48,7 +46,6 @@ def help_menu(komento_input, pelaajat):
                         5. Sähköhelikopteri, Hinta 2000, päästöt 0,45kg/km
                         6. Aurinkovoimaraketti, Hinta 1000, päästöt 0,50kg/km
                         """)
-                    break
                 else:
                     print(f"{RED}Tuntematon komento.{RESET}")
             except ValueError:

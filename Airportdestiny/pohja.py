@@ -29,7 +29,7 @@ for char in example:
     time.sleep(0.003)
 musat()
 input(f"\n{BLUE}Tervetuloa Airport Destiny peliin! {RESET}Peliä voi pelata 1 - 4 henkilöä. Peli arpoo satunnaisesti 10 lentoaseman reitin euroopan suurimmista lentokentistä."
-      f" \nVähäisimillä päästöillä kohdemaahan saapunut pelaaja voittaa pelin."
+      f" \nVähäisimillä päästöillä kohdemaahan saapunut pelaaja voittaa pelin. Euroopan maissa toimii tämänhetkisesti yhteinen valuutta nimeltään: 'raha'."
       f" {GREEN}\n(Paina ENTER jatkaaksesi)\n{RESET}")
 
 # PELAAJAN MÄÄRÄ -----------------------------------------------------------------
@@ -73,7 +73,7 @@ def intro_tekstit():
     for i, lentoasema in enumerate(pelilauta, start=1):
         print(f"{i} -{GREEN} {lentoasema}{RESET}")
 
-    input(f"\nAloitus summa on 1000€ ja tavoitteena on lentää {pelilauta[-1]}:iin mahdolisimman vähäisillä päästöillä. {GREEN} \nPaina ENTER jatkaaksesi{RESET}")
+    input(f"\nAloitus summa on 1000 rahaa ja tavoitteena on lentää {pelilauta[-1]}:iin mahdolisimman vähäisillä päästöillä. {GREEN} \nPaina ENTER jatkaaksesi{RESET}")
     input(f"1 nopan silmäluku vastaa 1000€. Mitä kalliimpi lento, sitä ympäristöystävällisempi se on.{GREEN}\nPaina ENTER nähdääksesi lentokone vaihtoehdot.{RESET}\n")
     for lentokone in lentokone_esittely:
         print(lentokone)
@@ -116,6 +116,7 @@ def main(heittää_noppaa, easter_egg):
                     if ooksävarma == "ei":
                         print("Kompensoituminen skipattiin!")
                         break
+            pelaaja[4] += 1
 
 
             valitsija = True
