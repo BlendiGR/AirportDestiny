@@ -3,8 +3,7 @@ from Musiikki import musat
 from resources import pelilauta, maiden_välinenpituus
 from lentokoneet import lentokone_esittely, lentokoneet, lentokoneet_esittely_stripped
 from NoppaPeli import heittää_noppaa, heittojen_tulostus, easter_egg
-from apuvalikko import help_komento, apukomennot
-
+from apuvalikko import help_menu
 import time
 import random
 # VÄRIKOODIT ----------------------------------------------------------------------
@@ -27,7 +26,7 @@ for char in example:
     print(char, end='', flush=True)
     time.sleep(0.003)
 musat()
-input(f"{BLUE} Tervetuloa Airport Destiny peliin! {RESET} Peliä voi pelata 1 - 4 henkilöä. Peli arpoaa satunnaisesti 10 lentoaseman reitin. \n Vähäisimillä päästöillä kohdemaahan saapunut pelaaja voittaa pelin. {GREEN} (Paina ENTER jatkaaksesi){RESET}")
+input(f"{BLUE}Tervetuloa Airport Destiny peliin! {RESET} Peliä voi pelata 1 - 4 henkilöä. Peli arpoaa satunnaisesti 10 lentoaseman reitin. \n Vähäisimillä päästöillä kohdemaahan saapunut pelaaja voittaa pelin. {GREEN} (Paina ENTER jatkaaksesi){RESET}")
 
 # PELAAJAN MÄÄRÄ -----------------------------------------------------------------
 def määrä_määrittely():
@@ -94,7 +93,8 @@ def main(heittää_noppaa, easter_egg):
         try:
             for pelaaja in pelaajat:
                 easter_egg(pelaaja)
-                vastaus2 = int(input(f"{pelaaja[0]} Haluatko ostaa lennon toiseen maahan {BLUE}(1){RESET}, heittää noppaa uudelleen {BLUE}(2){RESET} vai kompensoida päästöjä? {BLUE}(3) : {RESET}"))
+                vastaus2 = int(input(f"{pelaaja[0]} Haluatko ostaa lennon toiseen maahan {BLUE}(1){RESET}, heittää noppaa uudelleen {BLUE}(2){RESET} vai kompensoida päästöjä? {BLUE}(3) : {RESET} help menu {BLUE}(4"
+                                     f"){RESET} "))
                 print(f"{pelaaja[4]}. Vuoro! ")
                 if vastaus2 == 1:
                     lento(pelaaja, pelilauta)
@@ -113,9 +113,7 @@ def main(heittää_noppaa, easter_egg):
                     if ooksävarma == "ei":
                         print("Kompensoituminen skipattiin!")
                         break
-                elif vastaus2 == 4:
-                    apukomennot()
-                pelaaja[4] += 1
+
 
             valitsija = True
 
@@ -152,7 +150,9 @@ def lento(pelaaja, pelilauta):
                             pelaaja[3] += 1
                             print(f"Olet saapunut lentokenttään{GREEN} {pelilauta[pelaaja[3]]}{RESET}!")
                             print(f"Tuotetut päästöt {GREEN}{roundedtulos}{RESET} kg")
-                            input(f"{GREEN}Paina ENTER jatkaaksesi {RESET}")
+                            komento = input(f"{GREEN}Paina ENTER jatkaaksesi tai kirjoita 'help' nähdääksesi apukomennot {RESET}")
+                            if komento == "help":
+                                help_menu(komento, pelaajat)
                             pelaaja[2] += roundedtulos
 
                         oikea_inputti = True
@@ -166,6 +166,7 @@ def lento(pelaaja, pelilauta):
 
 
 def pelinaloittaja(main, easter_egg):
+
     maali = []
     kun_kaikki_saapuu = False
     while not kun_kaikki_saapuu:
