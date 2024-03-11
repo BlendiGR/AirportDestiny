@@ -1,6 +1,6 @@
 import random
 from pelaajan_valinnat import kivi_paperi_sakset
-from Musiikki import lopeta_musa, rahanippu
+from Musiikki import lopeta_musa, rahanippu, musat
 
 RED = '\033[31m'
 GREEN = '\033[32m'
@@ -67,7 +67,7 @@ def easter_egg1(pelaaja, luku, kivi_sakset_paperi):
         input(f'{pelaaja[0]}: Löysi 1000 rahanipun lentokentältä.{GREEN} Paina ENTER jatkaaksesi...{RESET}')
         pelaaja[1] += 1000
         print(f'Pelaaja {pelaaja[0]} saldo on{GREEN} {pelaaja[1]}{RESET}')
-        return
+        return lopeta_musa(), musat()
     if luku == 2:
         lopeta_musa()
         kivi_paperi_sakset(pelaaja)

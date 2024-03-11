@@ -1,8 +1,14 @@
 import random
 from Musiikki import musat, kivi_paperi_sakset_musa, lopeta_musa
 
+RED = '\033[31m'
+GREEN = '\033[32m'
+YELLOW = '\033[33m'
+BLUE = '\033[34m'
+RESET = '\033[0m'
 
-pelaaja = ["jarkko",0,0,2]
+
+
 
 def kivi_paperi_sakset(pelaaja):
     kivi_paperi_sakset_musa()
@@ -18,8 +24,7 @@ def kivi_paperi_sakset(pelaaja):
           (_____)
           (_____)
           (____)
-    ---.__(___)
-    '''
+    ---.__(___)'''
 
     paperi = '''
         _______
@@ -27,8 +32,7 @@ def kivi_paperi_sakset(pelaaja):
               ______)
               _______)
              _______)
-    ---.__________)
-    '''
+    ---.__________)'''
 
     sakset = '''
         _______
@@ -36,21 +40,40 @@ def kivi_paperi_sakset(pelaaja):
               ______)
            __________)
           (____)
-    ---.__(___)
-    '''
-    kuvat = [kivi, paperi, sakset]
+    ---.__(___)'''
 
+    paperi1 = '''
+            _______
+      ____(____   `---
+     (______          
+    (_______
+     (_______
+      (__________.---'''
+    kivi1 = '''
+         _____
+       _/__   `---
+      (_
+     (__
+      (__         
+       (______.---'''
+    sakset1 = '''
+               _______
+         ____(____    '---
+        (______
+        (__________
+             (____)
+              (___)__.---'''
+
+
+    kuvat = [kivi, paperi, sakset]
+    kuvat_tietokone = [kivi1, paperi1, sakset1]
     käyttäjä_valinta = int(input("Mikä valintasi? Syötä: (0) = kivi, (1) = paperi (2) = sakset \n"))
     if käyttäjä_valinta >= 3 or käyttäjä_valinta < 0:
         print("Virheellinen syöte, hävisit!")
     else:
-        print(kuvat[käyttäjä_valinta])
-
         tietokoneen_valinta = random.randint(0, 2)
-        print("Tietokone valitsi:")
-        print(kuvat[tietokoneen_valinta])
-
-
+        print("Valitsit:")
+        print(f"{kuvat[käyttäjä_valinta]} \n        Sinä valitsit:                 {kuvat_tietokone[tietokoneen_valinta]}")
         if käyttäjä_valinta == 0 and tietokoneen_valinta == 2:
             pelaaja[1] *= 3
             print("Voitit!")
@@ -65,7 +88,8 @@ def kivi_paperi_sakset(pelaaja):
             print("Voitit!")
         elif tietokoneen_valinta == käyttäjä_valinta:
             print("Tasapeli!")
-    print(f"Rahatilanne pelaaja {pelaaja[0]}: {pelaaja[1]}")
+    print(f"Rahatilanne pelaaja {pelaaja[0]}: {GREEN}{pelaaja[1]}{RESET}")
     lopeta_musa()
     musat()
 
+#sop
