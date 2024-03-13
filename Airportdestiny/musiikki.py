@@ -21,3 +21,4 @@ def rahanippu():
     pygame.mixer.music.load("Rahanippu.mp3")
     pygame.mixer.music.set_volume(0.10)
     pygame.mixer.music.play()
+

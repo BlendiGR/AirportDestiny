@@ -1,5 +1,6 @@
 import random
-from Musiikki import musat, kivi_paperi_sakset_musa, lopeta_musa
+from musiikki import musat, kivi_paperi_sakset_musa, lopeta_musa
+from colors import RED, GREEN, YELLOW, BLUE, RESET
 
 RED = '\033[31m'
 GREEN = '\033[32m'
@@ -11,7 +12,7 @@ RESET = '\033[0m'
 
 
 def kivi_paperi_sakset(pelaaja):
-    kivi_paperi_sakset_musa()
+    kivi_paperi_sakset_musa(musiikit_pois)
     print(f"{pelaaja[0]} olet joutunut kaksinkamppailuun pelissä kivi, paperi, sakset!!!\n"
           f"- Voitto = saat 3x omaisuutesi määrän\n"
           f"- Tasapeli = et menetä mitään\n"
@@ -90,5 +91,5 @@ def kivi_paperi_sakset(pelaaja):
             print("Tasapeli!")
     print(f"Rahatilanne pelaaja {pelaaja[0]}: {GREEN}{pelaaja[1]}{RESET}")
     lopeta_musa()
-    musat()
+    musat(musiikit_pois)
 

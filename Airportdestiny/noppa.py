@@ -1,6 +1,7 @@
 import random
-from pelaajan_valinnat import kivi_paperi_sakset
-from Musiikki import lopeta_musa, rahanippu, musat
+from easter_egg_2 import kivi_paperi_sakset
+from musiikki import lopeta_musa, rahanippu, musat
+
 
 RED = '\033[31m'
 GREEN = '\033[32m'
@@ -48,7 +49,7 @@ def heittojen_tulostus(pelaajat):
         tulos = heittää_noppaa()
         pelaaja[1] += tulos * 1000
         print(f"{pelaaja[0]} heitti {tulos}. Saldo on nyt {GREEN}{pelaaja[1]}{RESET} rahaa! \n")
-    print("Kaikki pelaajat ovat heittäneet noppaa.")
+    print(f"{YELLOW}Kaikki pelaajat ovat heittäneet noppaa.{RESET}")
     return pelaajat
 
 def easter_egg(pelaaja):

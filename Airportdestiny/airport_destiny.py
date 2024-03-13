@@ -1,18 +1,12 @@
-import asetukset
-from Musiikki import musat
-from resources import pelilauta, maiden_välinenpituus
-from lentokoneet import lentokone_esittely, lentokoneet, lentokoneet_esittely_stripped
-from NoppaPeli import heittää_noppaa, heittojen_tulostus, easter_egg
+
+from musiikki import musat
+from database import *
+from lentokoneet import *
+from noppa import *
 from apuvalikko import help_menu
 import time
+from colors import *
 import random
-# VÄRIKOODIT ----------------------------------------------------------------------
-
-RED = '\033[31m'
-GREEN = '\033[32m'
-YELLOW = '\033[33m'
-BLUE = '\033[34m'
-RESET = '\033[0m'
 
 #INTRO-----------------------------------------------------------------------------
 
@@ -94,7 +88,7 @@ intro_tekstit()
 
 tulokset = []
 # PELIN PÄÄFUNKTIO, JOKA KUTSUU HEITTÄÄ_NOPPAA JA EASTER_EGG FUNKTIOT. SISÄLTÄÄ JOKA VUOROLLA TEHDYT PELAAJIEN VALINNAT.
-def main(heittää_noppaa, easter_egg):
+def main(heittää_noppaa, easter_egg): #MAIN FUNKTIO JOKA PYÖRITTÄÄ PELIÄ---------------------------------------------
     heittojen_tulostus(pelaajat)
     valitsija = False
     while not valitsija:
@@ -114,15 +108,11 @@ def main(heittää_noppaa, easter_egg):
                     pelaaja[1] += noppa * 1000
                     input(f"{pelaaja[0]} sai {noppa * 1000} lisää rahaa! Saldo nyt : {pelaaja[1]} \n {GREEN} Paina ENTER jatkaaksesi {RESET} : ")
                 elif vastaus2 == 3:
-                    print("Kompensoidaan päästöjä.")
-                    ooksävarma = input(f"Päästöjen kompensointi maksaa 1000 rahaa ja kompensoi 10% niistä. Haluatko jatkaa? {GREEN}(Joo / Ei) : {RESET}").lower().strip()
-                    if ooksävarma == "joo":
-                        pelaaja[1] -= 1000
-                        pelaaja[2] *= 0.9
-                        print(f"{GREEN}{pelaaja[0]} Päästöt kompensoitu!{RESET}")
-                    if ooksävarma == "ei":
-                        print("Kompensointi skipattiin! Peli jatkuu... ")
-                        break
+                    print("Kompensoidaan päästöjä.\n")
+                    input(f"Päästöjen kompensointi maksaa 1000 rahaa ja kompensoi 10% niistä. PAINA ENTER JATKAAKSESI : ")
+                    pelaaja[1] -= 1000
+                    pelaaja[2] *= 0.9
+                    print(f"{GREEN}{pelaaja[0]} Päästöt kompensoitu!\n{RESET}")
             pelaaja[4] += 1
 
 
