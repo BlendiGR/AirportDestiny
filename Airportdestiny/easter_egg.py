@@ -84,7 +84,7 @@ def kivi_paperi_sakset(pelaaja):
     musat()
 
 def easter_egg(pelaaja):
-    luku = random.randint(1, 10)
+    luku = random.randint(1, 30)
     return easter_egg1(pelaaja, luku, kivi_paperi_sakset)
 
 def easter_egg1(pelaaja, luku, kivi_sakset_paperi):

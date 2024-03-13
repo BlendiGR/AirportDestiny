@@ -74,7 +74,7 @@ def intro_tekstit():
     for lentokone in lentokone_esittely:
         for char in lentokone:
             print(char, end='', flush=True)
-            time.sleep(0.0)
+            time.sleep(0.008)
 
     input(f"{GREEN}Paina ENTER jatkaaksesi{RESET}")
     input(f"Aloitamme pelin {GREEN}{pelilauta[0]}:issa {RESET}, seuraava kohde on: {GREEN}{pelilauta[1]}{RESET}. {GREEN}(Paina ENTER jatkaaksesi) \n{RESET}")
@@ -88,7 +88,7 @@ def main(heittää_noppaa, easter_egg): #MAIN FUNKTIO JOKA PYÖRITTÄÄ PELIÄ--
         try:
             for pelaaja in pelaajat:
                 easter_egg(pelaaja)
-                vastaus2 = int(input(f"\n{BLUE}{pelaaja[0]}{RESET} Haluatko ostaa lennon toiseen maahan {BLUE}(1){RESET}, heittää noppaa uudelleen {BLUE}(2){RESET} vai kompensoida päästöjä? {BLUE}(3) : {RESET} \n"))
+                vastaus2 = int(input(f"\n{BLUE}{pelaaja[0]}{RESET} {YELLOW}-Saldo: {pelaaja[1]} rahaa-{RESET} Haluatko ostaa lennon toiseen maahan {BLUE}(1){RESET}, heittää noppaa uudelleen {BLUE}(2){RESET} vai kompensoida päästöjä? {BLUE}(3) : {RESET} \n"))
                 print(f"            {YELLOW}{pelaaja[4]}. Vuoro!{RESET}")
                 if vastaus2 == 1:
                     if pelaaja[1] < 1000:
