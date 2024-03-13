@@ -19,7 +19,7 @@ def rahatpois():
     pygame.init()
     pygame.mixer.init()
     pygame.mixer.music.load("rahatpois.mp3")
-    pygame.mixer.music.set_volume(0.10)
+    pygame.mixer.music.set_volume(0.25)
     pygame.mixer.music.play()
 
 def rahanippu():
