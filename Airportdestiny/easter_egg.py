@@ -57,7 +57,7 @@ def kivi_paperi_sakset(pelaaja):
 
     kuvat = [kivi, paperi, sakset]
     kuvat_tietokone = [kivi1, paperi1, sakset1]
-    käyttäjä_valinta = int(input("Mikä valintasi? Syötä: (0) = kivi, (1) = paperi (2) = sakset \n"))
+    käyttäjä_valinta = int(input("Mikä valintasi? Syötä: (0) = kivi, (1) = paperi (2) = sakset \n"))###
     if käyttäjä_valinta >= 3 or käyttäjä_valinta < 0:
         print("Virheellinen syöte! Peli jatkuu....")
     else:

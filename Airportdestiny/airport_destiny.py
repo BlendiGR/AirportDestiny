@@ -80,7 +80,7 @@ def intro_tekstit():
     input(f"Aloitamme pelin {GREEN}{pelilauta[0]}:issa {RESET}, seuraava kohde on: {GREEN}{pelilauta[1]}{RESET}. {GREEN}Paina ENTER jatkaaksesi : \n{RESET}")
 
 
-# PELIN PÄÄFUNKTIO, JOKA KUTSUU HEITTÄÄ_NOPPAA JA EASTER_EGG FUNKTIOT. SISÄLTÄÄ JOKA VUOROLLA TEHDYT PELAAJIEN VALINNAT.
+# PELIN PÄÄFUNKTIO, JOKA KUTSUU HEITTÄÄ_NOPPAA JA EASTER_EGG FUNKTIOT. SISÄLTÄÄ JOKA VUOROLLA TEHDYT PELAAJIEN VALINNAT..
 def main(heittää_noppaa, easter_egg): #MAIN FUNKTIO JOKA PYÖRITTÄÄ PELIÄ---------------------------------------------
     heittojen_tulostus(pelaajat)
     valitsija = False
