@@ -23,7 +23,12 @@ def satunnaiset_maat(sql_yhteys):
     and type = 'large_airport';""")
     cursor.execute(sql)
     result = cursor.fetchall()
-
+    for results in result:
+        if results == "Azur_Airport":
+            sqld = ("delete from airport where airport.ident == 'LFMN'")
+            cursor = sql_yhteys.cursor()
+            cursor.execute(sqld)
+    result = result
 
     # random.sample varmistaa, että luvut eivät toistu
     pelilauta = []
