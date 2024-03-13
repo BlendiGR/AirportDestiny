@@ -80,15 +80,13 @@ def intro_tekstit():
     input(f"Aloitamme pelin {GREEN}{pelilauta[0]}:issa {RESET}, seuraava kohde on: {GREEN}{pelilauta[1]}{RESET}. {GREEN}Paina ENTER jatkaaksesi : \n{RESET}")
 
 
-# PELIN PÄÄFUNKTIO, JOKA KUTSUU HEITTÄÄ_NOPPAA JA EASTER_EGG FUNKTIOT. SISÄLTÄÄ JOKA VUOROLLA TEHDYT PELAAJIEN VALINNAT..
+# PELIN PÄÄFUNKTIO, JOKA KUTSUU HEITTÄÄ_NOPPAA JA EASTER_EGG FUNKTIOT. SISÄLTÄÄ JOKA VUOROLLA TEHDYT PELAAJIEN VALINNAT.
 def main(heittää_noppaa, easter_egg): #MAIN FUNKTIO JOKA PYÖRITTÄÄ PELIÄ---------------------------------------------
     heittojen_tulostus(pelaajat)
-    valitsija = False
-    while not valitsija:
-        try:
-            for pelaaja in pelaajat:
-                easter_egg(pelaaja)
-
+    for pelaaja in pelaajat:
+        easter_egg(pelaaja)
+        while True:
+            try:
                 vastaus2 = int(input(f"\n{BLUE}{pelaaja[0]}{RESET} {YELLOW}-Saldo: {pelaaja[1]} rahaa-{RESET} Haluatko ostaa lennon toiseen maahan {BLUE}(1){RESET}, heittää noppaa uudelleen {BLUE}(2){RESET} vai kompensoida päästöjä? {BLUE}(3) : {RESET} \n"))
                 print(f"            {YELLOW}{pelaaja[4]}. Vuoro!{RESET}")
                 if vastaus2 == 1:
@@ -111,11 +109,12 @@ def main(heittää_noppaa, easter_egg): #MAIN FUNKTIO JOKA PYÖRITTÄÄ PELIÄ--
                     int(pelaaja[2])
                     print(f"{BLUE}{pelaaja[0]}{RESET}{GREEN} Päästöt kompensoitu!\n{RESET}")
                 pelaaja[4] += 1
+                break
 
-            valitsija = True
+            except ValueError:
+                print(f"{RED}Väärä komento!{RESET}")
 
-        except ValueError:
-            print(f"{RED}Väärä komento!{RESET}")
+
 
 
 #LENTOKONEVALINNAT- LASKEE TUOTETUT PÄÄSTÖT JA PÄIVITTÄÄ PELAAJAN RAHA/PÄÄSTÖTILANTEEN/SIJAINNIN.
