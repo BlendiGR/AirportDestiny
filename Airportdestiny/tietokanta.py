@@ -1,7 +1,7 @@
 import mysql.connector
 import random
 from geopy.distance import geodesic
-
+import time
 def yhteys():
     connection = mysql.connector.connect(
         host="127.0.0.1",
@@ -11,13 +11,15 @@ def yhteys():
         database="flight_game",
         autocommit=True,
     )
+    time.sleep(1)
+    tietokanta_alustus(connection)
     return connection
 
 def tietokanta_alustus(sql_yhteys):
     cursor = sql_yhteys.cursor()
-    sql2 = "drop table if exists game, goal_reached, goal;"
-    cursor.execute(sql2)
-
+    cursor.execute("drop table if exists goal_reached;")
+    cursor.execute("drop table if exists game;")
+    cursor.execute("drop table if exists goal;")
 def satunnaiset_maat(sql_yhteys):
 
     cursor = sql_yhteys.cursor()
