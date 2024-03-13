@@ -184,7 +184,7 @@ def pelinaloittaja(main, easter_egg):
 
             kun_kaikki_saapuu = True
 
-#ALOITETAAN PELI ---------------------------------------------------------------------------------------------------
+#ALOITETAAN PELI ----------------------------------------------------------------------------------------------------
 
 
 tietokanta_alustus(sql_yhteys)
