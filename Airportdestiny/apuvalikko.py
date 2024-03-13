@@ -18,6 +18,8 @@ RESET = '\033[0m'
 RED = '\033[91m'
 
 def help_menu(komento_input, pelaajat):
+    musiikit_pois = False
+
     if komento_input == "help":
         print(f"{YELLOW}\n---------------HELP MENU---------------{RESET}")
         print("\nTässä on komentoja, joita voit käyttää :\n")
@@ -25,6 +27,7 @@ def help_menu(komento_input, pelaajat):
         print(f"{GREEN}positiot{RESET} - Näytä pelaajien tämänhetkiset sijainnit")
         print(f"{GREEN}lentokoneet{RESET} - Näytä nykyiset lentokoneet ja niiden ominaisuudet")
         print(f"{GREEN}quit{RESET} - Lopettaa pelin")
+        print(f"{GREEN}musiikit_pois{RESET} - Sammuttaa musiikit")
 
         while True:
             try:
@@ -34,6 +37,8 @@ def help_menu(komento_input, pelaajat):
                     sys.exit()
                 elif komento == "palaa":
                     break
+                elif komento == "musiikit_pois":
+                    musiikit_pois = True
                 elif komento == "positiot":
                     for pelaaja in pelaajat:
                         print(f"Pelaajan {pelaaja[0]} sijainti: {GREEN}{pelilauta[pelaaja[3]]}{RESET}")
