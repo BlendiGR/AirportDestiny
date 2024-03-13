@@ -55,7 +55,6 @@ def kivi_paperi_sakset(pelaaja):
              (____)
               (___)__.---''' +RESET
 
-
     kuvat = [kivi, paperi, sakset]
     kuvat_tietokone = [kivi1, paperi1, sakset1]
     käyttäjä_valinta = int(input("Mikä valintasi? Syötä: (0) = kivi, (1) = paperi (2) = sakset \n"))
@@ -64,7 +63,8 @@ def kivi_paperi_sakset(pelaaja):
     else:
         tietokoneen_valinta = random.randint(0, 2)
         print("Valitsit:")
-        print(f"{kuvat[käyttäjä_valinta]} \n        Tietokone valitsi:                 {kuvat_tietokone[tietokoneen_valinta]}")
+        print(
+            f"{kuvat[käyttäjä_valinta]} \n        Tietokone valitsi:                 {kuvat_tietokone[tietokoneen_valinta]}")
         if käyttäjä_valinta == 0 and tietokoneen_valinta == 2:
             pelaaja[1] *= 3
             print("Voitit!")
@@ -83,8 +83,9 @@ def kivi_paperi_sakset(pelaaja):
     lopeta_musa()
     musat()
 
+
 def easter_egg(pelaaja):
-    luku = random.randint(1, 30)
+    luku = random.randint(1, 50)
     return easter_egg1(pelaaja, luku, kivi_paperi_sakset)
 
 def easter_egg1(pelaaja, luku, kivi_sakset_paperi):

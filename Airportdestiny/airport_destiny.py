@@ -88,12 +88,13 @@ def main(heittää_noppaa, easter_egg): #MAIN FUNKTIO JOKA PYÖRITTÄÄ PELIÄ--
         try:
             for pelaaja in pelaajat:
                 easter_egg(pelaaja)
+
                 vastaus2 = int(input(f"\n{BLUE}{pelaaja[0]}{RESET} {YELLOW}-Saldo: {pelaaja[1]} rahaa-{RESET} Haluatko ostaa lennon toiseen maahan {BLUE}(1){RESET}, heittää noppaa uudelleen {BLUE}(2){RESET} vai kompensoida päästöjä? {BLUE}(3) : {RESET} \n"))
                 print(f"            {YELLOW}{pelaaja[4]}. Vuoro!{RESET}")
                 if vastaus2 == 1:
                     if pelaaja[1] < 1000:
                         input(f'Pidä huoli, että sinulla on tarpeeksi rahulia lentoihin. Huonosta rahan hallinnasta menetit vuorosi.{GREEN} Paina ENTER  jatkaaksesi : {RESET}\n')
-                    else:
+                    elif pelaaja[1] >= 1000:
                         lento(pelaaja, pelilauta)
                 elif vastaus2 == 2:
                     noppa = heittää_noppaa()
@@ -111,12 +112,9 @@ def main(heittää_noppaa, easter_egg): #MAIN FUNKTIO JOKA PYÖRITTÄÄ PELIÄ--
                     print(f"{BLUE}{pelaaja[0]}{RESET}{GREEN}Päästöt kompensoitu!\n{RESET}")
                 pelaaja[4] += 1
 
-
-
-
             valitsija = True
 
-        except ValueError or not vastaus2:
+        except ValueError:
             print(f"{RED}Väärä komento!{RESET}")
 
 
