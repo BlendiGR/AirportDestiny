@@ -1,18 +1,8 @@
 import random
-from musiikki import musat, kivi_paperi_sakset_musa, lopeta_musa
-from colors import RED, GREEN, YELLOW, BLUE, RESET
-
-RED = '\033[31m'
-GREEN = '\033[32m'
-YELLOW = '\033[33m'
-BLUE = '\033[34m'
-RESET = '\033[0m'
-
-
-
-
+from musiikki import *
+from varit import *
 def kivi_paperi_sakset(pelaaja):
-    kivi_paperi_sakset_musa(musiikit_pois)
+    kivi_paperi_sakset_musa()
     print(f"{pelaaja[0]} olet joutunut kaksinkamppailuun pelissä kivi, paperi, sakset!!!\n"
           f"- Voitto = saat 3x omaisuutesi määrän\n"
           f"- Tasapeli = et menetä mitään\n"
@@ -91,5 +81,28 @@ def kivi_paperi_sakset(pelaaja):
             print("Tasapeli!")
     print(f"Rahatilanne pelaaja {pelaaja[0]}: {GREEN}{pelaaja[1]}{RESET}")
     lopeta_musa()
-    musat(musiikit_pois)
+    musat()
+
+def easter_egg(pelaaja):
+    luku = random.randint(1, 100)
+    return easter_egg1(pelaaja, luku, kivi_paperi_sakset)
+
+def easter_egg1(pelaaja, luku, kivi_sakset_paperi):
+    if luku == 1:
+        lopeta_musa()
+        rahanippu()
+        input(f'{pelaaja[0]}:{BLUE} Löysi 10 000 rahanipun lentokentältä.{RESET}{GREEN} Paina ENTER jatkaaksesi...{RESET}')
+        pelaaja[1] += 10000
+        print(f'Pelaaja {pelaaja[0]} saldo on{GREEN} {pelaaja[1]}{RESET}')
+        return lopeta_musa(), musat()
+    if luku == 2:
+        lopeta_musa()
+        kivi_sakset_paperi(pelaaja)
+    if luku == 3:
+        input(f'{pelaaja[0]}: Osa rahoistasi varastettiin... menetit {GREEN}1000{RESET} rahaa.{GREEN} Paina ENTER jatkaaksesi...{RESET}')
+        if pelaaja[1] <= 1000:
+            print('...Mutta olet valmiiksi niin köyhä niin saat rahasi takaisin')
+        else:
+            pelaaja[1] -= 1000
+        print(f'Pelaaja {pelaaja[0]} saldo on{GREEN} {pelaaja[1]}{RESET}')
 

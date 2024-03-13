@@ -1,5 +1,5 @@
 from lentokoneet import lentokone_esittely, lentokoneet, lentokoneet_esittely_stripped
-from database import pelilauta
+from tietokanta import pelilauta
 RED = '\033[31m'
 GREEN = '\033[32m'
 YELLOW = '\033[33m'
@@ -37,7 +37,7 @@ def help_menu(komento_input, pelaajat):
                     break
                 elif komento == "positiot":
                     for pelaaja in pelaajat:
-                        print(f"Pelaajan {pelaaja[0]} sijainti: {GREEN}{pelilauta[pelaaja[3]]}{RESET}")
+                        print(f"Pelaajan {pelaaja[0]} sijainti: {GREEN} {pelaaja[3]+1}. {pelilauta[pelaaja[3]]}{RESET}")
                 elif komento == "lentokoneet":
                         print(f"""
                         1. Sähkölentokone, Hinta 6000, päästöt 0.25kg/km
