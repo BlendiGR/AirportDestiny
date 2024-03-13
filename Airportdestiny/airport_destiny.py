@@ -100,7 +100,7 @@ def main(heittää_noppaa, easter_egg): #MAIN FUNKTIO JOKA PYÖRITTÄÄ PELIÄ--
                     pelaaja[1] += noppa * 1000
                     input(f"{BLUE}{pelaaja[0]}{RESET} sai {noppa * 1000} lisää rahaa! Saldo nyt : {pelaaja[1]}. {GREEN} Paina ENTER jatkaaksesi : {RESET}\n")
                 elif vastaus2 == 3:
-                    if pelaaja[2] < 1000:
+                    if pelaaja[1] < 1000:
                         print(f"{RED} Sinulla ei ole tarpeeksi rahaa.{RESET}")
                     print("Kompensoidaan päästöjä.\n")
                     input(f"Päästöjen kompensointi maksaa 1000 rahaa ja kompensoi 10% niistä. {GREEN} Paina ENTER jatkaaksesi : {RESET} \n")
@@ -162,27 +162,27 @@ def lento(pelaaja, pelilauta):
 
 #FUNKTIO PELIN LOPETTAMISEEN: LASKEE PELAAJAN/PELAAJIEN PISTEET
 def pelinaloittaja(main, easter_egg):
-
     maali = []
     kun_kaikki_saapuu = False
     while not kun_kaikki_saapuu:
         main(heittää_noppaa, easter_egg)
-        for pelaaja in pelaajat:
-            if pelaaja[3] == 9:
-                maali.append(pelaaja)
-                pelaajat.remove(pelaaja)
+        poistettavat = [pelaaja for pelaaja in pelaajat if pelaaja[3] >= 9]
+        maali.extend(poistettavat)
+        for pelaaja in poistettavat:
+            pelaajat.remove(pelaaja)
         if not pelaajat:
             input(f"Kaikki ovat päässeet maaliin!{GREEN} Paina ENTER nähdääksesi pisteet : {RESET} \n")
             print(f"{YELLOW} Mitä pienempi luku, sitä parempi tulos.{RESET}")
+            voittaja_lista = []
             for voittaja in maali:
-                voittaja_lista = []
                 nimi, raha, päästöt, paikka, vuorot = voittaja
                 pisteet = vuorot / päästöt
                 voittaja_lista.append((nimi, pisteet * 10000))
-                for nimi, pisteet in voittaja_lista:
-                    print(f" - {BLUE}Onneksi olkoon pelin läpäisemisestä!! {nimi}{RESET}, pisteet {GREEN}{pisteet:.1f}{RESET} ! ")
+            for nimi, pisteet in voittaja_lista:
+                print(f" - {BLUE}Onneksi olkoon pelin läpäisemisestä!! {nimi}{RESET}, pisteet {GREEN}{pisteet:.1f}{RESET} ! ")
 
             kun_kaikki_saapuu = True
+
 
 #ALOITETAAN PELI ----------------------------------------------------------------------------------------------------
 
