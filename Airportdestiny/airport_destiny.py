@@ -115,8 +115,6 @@ def main(heittää_noppaa, easter_egg): #MAIN FUNKTIO JOKA PYÖRITTÄÄ PELIÄ--
                 print(f"{RED}Väärä komento!{RESET}")
 
 
-
-
 #LENTOKONEVALINNAT- LASKEE TUOTETUT PÄÄSTÖT JA PÄIVITTÄÄ PELAAJAN RAHA/PÄÄSTÖTILANTEEN/SIJAINNIN.
 def lento(pelaaja, pelilauta):
     print('''
