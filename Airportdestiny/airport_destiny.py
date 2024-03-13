@@ -148,7 +148,7 @@ def lento(pelaaja, pelilauta):
                             pelaaja[3] += 1
                             print(f"Olet saapunut lentokenttään{GREEN}  {pelaaja[3]+1}. {pelilauta[pelaaja[3]]}{RESET}!")
                             print(f"Tuotetut päästöt {GREEN}{roundedtulos}{RESET} kg")
-                            komento = input(f"{GREEN}Paina ENTER jatkaaksesi tai kirjoita 'help' nähdääksesi apukomennot : \n {RESET}")
+                            komento = input(f"{GREEN}Paina ENTER jatkaaksesi tai kirjoita 'help' nähdääksesi apukomennot : \n {RESET}").lower().strip()
                             if komento == "help":
                                 help_menu(komento, pelaajat)
                             pelaaja[2] += roundedtulos
