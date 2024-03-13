@@ -18,7 +18,7 @@ def kivi_paperi_sakset_musa():
 def rahanippu():
     pygame.init()
     pygame.mixer.init()
-    pygame.mixer.music.load("Rahanippu.mp3")
+    pygame.mixer.music.load("rahanippu.mp3")
     pygame.mixer.music.set_volume(0.10)
     pygame.mixer.music.play()
 
