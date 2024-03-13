@@ -29,7 +29,8 @@ for char in example:
     time.sleep(0.003)
 musat()
 input(f"\n{BLUE}Tervetuloa Airport Destiny peliin! {RESET}Peliä voi pelata 1 - 4 henkilöä. Peli arpoo satunnaisesti 10 lentoaseman reitin euroopan suurimmista lentokentistä."
-      f" \nVähäisimillä päästöillä kohdemaahan saapunut pelaaja voittaa pelin. Euroopan maissa toimii tämänhetkisesti yhteinen valuutta nimeltään: 'raha'."
+      f" \nVähäisimillä päästöillä kohdemaahan saapunut pelaaja voittaa pelin. \nVuorojen määrä vaikuttaa pisteiden lopputulokseen, joten mieti fiksusti kuinka pääset mahdollisimman nopeasti viimeiseen matkakohteesen."
+      f" \nEuroopan maissa toimii tämänhetkisesti yhteinen valuutta nimeltään: 'raha'."
       f" {GREEN}\n(Paina ENTER jatkaaksesi)\n{RESET}")
 
 # PELAAJAN MÄÄRÄ -----------------------------------------------------------------
@@ -92,7 +93,7 @@ intro_tekstit()
 
 
 tulokset = []
-# PELIN PÄÄFUNKTIO, JOKA KUTSUU HEITTÄÄ_NOPPAA JA EASTER_EGG FUNKTIOT. SISÄLTÄÄ JOKA VUOROLLA TEHTÄVÄT PELAAJAN VALINNAT.
+# PELIN PÄÄFUNKTIO, JOKA KUTSUU HEITTÄÄ_NOPPAA JA EASTER_EGG FUNKTIOT. SISÄLTÄÄ JOKA VUOROLLA TEHDYT PELAAJIEN VALINNAT.
 def main(heittää_noppaa, easter_egg):
     heittojen_tulostus(pelaajat)
     valitsija = False
