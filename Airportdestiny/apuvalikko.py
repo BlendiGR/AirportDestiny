@@ -39,6 +39,7 @@ def help_menu(komento_input, pelaajat):
                     break
                 elif komento == "musiikit_pois":
                     musiikit_pois = True
+                    return musiikit_pois
                 elif komento == "positiot":
                     for pelaaja in pelaajat:
                         print(f"Pelaajan {pelaaja[0]} sijainti: {GREEN}{pelilauta[pelaaja[3]]}{RESET}")
