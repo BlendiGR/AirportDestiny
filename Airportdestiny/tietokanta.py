@@ -24,7 +24,7 @@ def satunnaiset_maat(sql_yhteys):
     cursor.execute(sql)
     result = cursor.fetchall()
     for results in result:
-        if results == "Azur_Airport":
+        if "Azur" in results:
             sqld = ("delete from airport where airport.ident == 'LFMN'")
             cursor = sql_yhteys.cursor()
             cursor.execute(sqld)
