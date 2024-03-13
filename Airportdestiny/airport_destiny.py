@@ -188,6 +188,9 @@ def pelinaloittaja(main, easter_egg):
             kun_kaikki_saapuu = True
 
 #ALOITETAAN PELI ---------------------------------------------------------------------------------------------------
+
+
+tietokanta_alustus(sql_yhteys)
 esittely()
 tulokset = []
 määrä = määrä_määrittely()
