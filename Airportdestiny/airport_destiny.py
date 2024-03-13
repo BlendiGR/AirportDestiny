@@ -109,7 +109,7 @@ def main(heittää_noppaa, easter_egg): #MAIN FUNKTIO JOKA PYÖRITTÄÄ PELIÄ--
                     pelaaja[1] -= 1000
                     pelaaja[2] *= 0.9
                     int(pelaaja[2])
-                    print(f"{BLUE}{pelaaja[0]}{RESET}{GREEN}Päästöt kompensoitu!\n{RESET}")
+                    print(f"{BLUE}{pelaaja[0]}{RESET}{GREEN} Päästöt kompensoitu!\n{RESET}")
                 pelaaja[4] += 1
 
             valitsija = True
