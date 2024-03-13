@@ -34,7 +34,7 @@ def satunnaiset_maat(sql_yhteys):
             sqld = ("delete from airport where airport.ident = 'LFMN'")
             cursor.execute(sqld)
     result = result
-
+#
     # random.sample varmistaa, että luvut eivät toistu
     pelilauta = []
 

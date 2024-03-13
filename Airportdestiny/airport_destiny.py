@@ -62,7 +62,7 @@ def pelaaja_nimi(määrä):
                     print("Nimi on jo käytössä. Anna eri nimi.")
     return pelaajat
 
-#REITTIEN KERTOMINEN JA LENTOKONE VAIHTOEHDOT ----------------------------------------------------------------------
+##REITTIEN KERTOMINEN JA LENTOKONE VAIHTOEHDOT ----------------------------------------------------------------------
 def intro_tekstit():
     print("\nReitti on seuraavanlainen : ")
     #PRINTATAAN REITIT NUMEROJÄRJESTYKESSÄ ALKAEN NRO 1 -------------------------------------------------------------------

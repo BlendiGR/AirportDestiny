@@ -8,7 +8,7 @@ def kivi_paperi_sakset(pelaaja):
           f"- Tasapeli = et menetä mitään\n"
           f"- Häviö = menetät 50% omaisuudestasi.")
 
-
+#
     kivi = GREEN+ '''
         _______
     ---'   ____)

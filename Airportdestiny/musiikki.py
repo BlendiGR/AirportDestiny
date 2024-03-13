@@ -1,4 +1,4 @@
-import pygame
+import pygame#
 def musat():
     pygame.init()
     pygame.mixer.init()
