@@ -1,7 +1,7 @@
 import mysql.connector
 import random
 from geopy.distance import geodesic
-
+import time
 def yhteys():
     connection = mysql.connector.connect(
         host="127.0.0.1",
@@ -11,9 +11,15 @@ def yhteys():
         database="flight_game",
         autocommit=True,
     )
+    time.sleep(1)
+    tietokanta_alustus(connection)
     return connection
 
-
+def tietokanta_alustus(sql_yhteys):
+    cursor = sql_yhteys.cursor()
+    cursor.execute("drop table if exists goal_reached;")
+    cursor.execute("drop table if exists game;")
+    cursor.execute("drop table if exists goal;")
 def satunnaiset_maat(sql_yhteys):
 
     cursor = sql_yhteys.cursor()
@@ -23,10 +29,9 @@ def satunnaiset_maat(sql_yhteys):
     and type = 'large_airport';""")
     cursor.execute(sql)
     result = cursor.fetchall()
-    for results in result:
-        if "Azur" in results:
-            sqld = ("delete from airport where airport.ident == 'LFMN'")
-            cursor = sql_yhteys.cursor()
+    for airport, country in result:
+        if "Azur" in airport:
+            sqld = ("delete from airport where airport.ident = 'LFMN'")
             cursor.execute(sqld)
     result = result
 

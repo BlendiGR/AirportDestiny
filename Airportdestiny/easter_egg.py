@@ -91,15 +91,15 @@ def easter_egg1(pelaaja, luku, kivi_sakset_paperi):
     if luku == 1:
         lopeta_musa()
         rahanippu()
-        input(f'{pelaaja[0]}:{BLUE} Löysi 10 000 rahanipun lentokentältä.{RESET}{GREEN} Paina ENTER jatkaaksesi...{RESET}')
+        input(f'{pelaaja[0]}:{BLUE} Löysi 10 000 rahanipun lentokentältä.{RESET}{GREEN} Paina ENTER jatkaaksesi : {RESET}')
         pelaaja[1] += 10000
-        print(f'Pelaaja {pelaaja[0]} saldo on{GREEN} {pelaaja[1]}{RESET}')
+        print(f'Pelaaja {BLUE}{pelaaja[0]}{RESET} saldo on{GREEN} {pelaaja[1]}{RESET}')
         return lopeta_musa(), musat()
     if luku == 2:
         lopeta_musa()
         kivi_sakset_paperi(pelaaja)
     if luku == 3:
-        input(f'{pelaaja[0]}: Osa rahoistasi varastettiin... menetit {GREEN}1000{RESET} rahaa.{GREEN} Paina ENTER jatkaaksesi...{RESET}')
+        input(f'{BLUE}{pelaaja[0]}. {RED}Osa rahoistasi varastettiin... menetit {GREEN}1000 rahaa.{GREEN} Paina ENTER jatkaaksesi : {RESET}')
         if pelaaja[1] <= 1000:
             print('...Mutta olet valmiiksi niin köyhä niin saat rahasi takaisin')
         else:
