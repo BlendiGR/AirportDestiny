@@ -52,13 +52,8 @@ def heittojen_tulostus(pelaajat):
     return pelaajat
 
 def easter_egg(pelaaja):
-    luku = random.randint(1, 4)
+    luku = random.randint(1, 100)
     return easter_egg1(pelaaja, luku, kivi_paperi_sakset)
-
-
-
-
-
 
 def easter_egg1(pelaaja, luku, kivi_sakset_paperi):
     if luku == 1:
@@ -70,5 +65,15 @@ def easter_egg1(pelaaja, luku, kivi_sakset_paperi):
         return lopeta_musa(), musat()
     if luku == 2:
         lopeta_musa()
-        kivi_paperi_sakset(pelaaja)
+        kivi_sakset_paperi(pelaaja)
+    if luku == 3:
+        input(f'{pelaaja[0]}: Osa rahoistasi varastettiin... menetit {GREEN}1000{RESET} rahaa.{GREEN} Paina ENTER jatkaaksesi...{RESET}')
+        if pelaaja[1] <= 1000:
+            print('...Mutta olet valmiiksi niin köyhä niin saat rahasi takaisin')
+        else:
+            pelaaja[1] -= 1000
+        print(f'Pelaaja {pelaaja[0]} saldo on{GREEN} {pelaaja[1]}{RESET}')
+
+
+
 
