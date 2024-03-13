@@ -92,6 +92,7 @@ intro_tekstit()
 
 
 tulokset = []
+# PELIN PÄÄFUNKTIO, JOKA KUTSUU HEITTÄÄ_NOPPAA JA EASTER_EGG FUNKTIOT. SISÄLTÄÄ JOKA VUOROLLA TEHTÄVÄT PELAAJAN VALINNAT.
 def main(heittää_noppaa, easter_egg):
     heittojen_tulostus(pelaajat)
     valitsija = False
@@ -117,9 +118,9 @@ def main(heittää_noppaa, easter_egg):
                     if ooksävarma == "joo":
                         pelaaja[1] -= 1000
                         pelaaja[2] *= 0.9
-                        print(f"{GREEN}{pelaaja[0]} Päästösi ovat kompensoitu!{RESET}")
+                        print(f"{GREEN}{pelaaja[0]} Päästöt kompensoitu!{RESET}")
                     if ooksävarma == "ei":
-                        print("Kompensoituminen skipattiin!")
+                        print("Kompensointi skipattiin! Peli jatkuu... ")
                         break
             pelaaja[4] += 1
 
@@ -129,7 +130,7 @@ def main(heittää_noppaa, easter_egg):
         except ValueError:
             print(f"{RED}Väärä komento!{RESET}")
 
-
+#LENTOKONEVALINNAT- LASKEE TUOTETUT PÄÄSTÖT JA PÄIVITTÄÄ PELAAJAN RAHA/PÄÄSTÖTILANTEEN/SIJAINNIN.
 def lento(pelaaja, pelilauta):
     print('''
     1. Sähkölentokone, Hinta 6000, päästöt 0.25kg/km
@@ -173,7 +174,7 @@ def lento(pelaaja, pelilauta):
         except ValueError:
             print(f"Väärä valinta. Valitse lentokone {BLUE} (0 - 6){RESET}{GREEN}!")
 
-
+#FUNKTIO PELIN LOPETTAMISEEN: LASKEE PELAAJAN/PELAAJIEN PISTEET
 def pelinaloittaja(main, easter_egg):
 
     maali = []
