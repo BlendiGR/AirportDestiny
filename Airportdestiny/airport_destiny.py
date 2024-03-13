@@ -76,7 +76,7 @@ def intro_tekstit():
             print(char, end='', flush=True)
             time.sleep(0.0)
 
-    input(f"{GREEN}Paina ENTER jatkaaksesi{RESET}")
+    input(f"{GREEN}Paina ENTER jatkaaksesi{RESET}\n")
     input(f"Aloitamme pelin {GREEN}{pelilauta[0]}:issa {RESET}, seuraava kohde on: {GREEN}{pelilauta[1]}{RESET}. {GREEN}(Paina ENTER jatkaaksesi) \n{RESET}")
 
 
