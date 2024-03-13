@@ -20,12 +20,14 @@ RED = '\033[91m'
 def help_menu(komento_input, pelaajat):
 
     if komento_input == "help":
-        print(f"{YELLOW}\n---------------HELP MENU---------------{RESET}")
-        print("\nTässä on komentoja, joita voit käyttää :\n")
-        print(f"{GREEN}palaa{RESET} - Jatkaaksesi peliä")
-        print(f"{GREEN}positiot{RESET} - Näytä pelaajien tämänhetkiset sijainnit")
-        print(f"{GREEN}lentokoneet{RESET} - Näytä nykyiset lentokoneet ja niiden ominaisuudet")
-        print(f"{GREEN}quit{RESET} - Lopettaa pelin")
+        print(f"""
+           {YELLOW}---------------HELP MENU---------------{RESET}
+             \n           Tässä on komentoja, joita voit käyttää :\n
+        {GREEN}palaa{RESET} - Jatkaaksesi peliä
+        {GREEN}positiot{RESET} - Näytä pelaajien tämänhetkiset sijainnit
+        {GREEN}lentokoneet{RESET} - Näytä nykyiset lentokoneet ja niiden ominaisuudet
+        {GREEN}quit{RESET} - Lopettaa pelin
+        """)
 
         while True:
             try:
@@ -37,7 +39,7 @@ def help_menu(komento_input, pelaajat):
                     break
                 elif komento == "positiot":
                     for pelaaja in pelaajat:
-                        print(f"Pelaajan {pelaaja[0]} sijainti: {GREEN} {pelaaja[3]+1}. {pelilauta[pelaaja[3]]}{RESET}")
+                        print(f"Pelaajan {BLUE}{pelaaja[0]}{RESET} sijainti: {GREEN} {pelaaja[3]+1}. {pelilauta[pelaaja[3]]}{RESET}")
                 elif komento == "lentokoneet":
                         print(f"""
                         1. Sähkölentokone, Hinta 6000, päästöt 0.25kg/km

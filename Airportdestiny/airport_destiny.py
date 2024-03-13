@@ -50,13 +50,13 @@ def pelaaja_nimi(määrä):
     nimet = set()
     for i in range(1, määrä + 1):
         while True:
-            name = input(f"Mikä on pelaajan {i} nimi: ").strip()
-            if name and name not in nimet:
-                pelaajat.append([name, 0, 0, 0, 1]) #NIMI, RAHA, PÄÄSTÖT, PAIKKA 0 - 10, VUOROT#################################################################
-                nimet.add(name)
+            nimi = input(f"Mikä on pelaajan {i} nimi: ").strip()
+            if nimi not in nimet:
+                pelaajat.append([nimi, 0, 0, 0, 1]) #NIMI, RAHA, PÄÄSTÖT, PAIKKA 0 - 10, VUOROT#################################################################
+                nimet.add(nimi)
                 break
             else:
-                if not name:
+                if not nimi:
                     print("Nimi ei voi olla tyhjä. Yritä uudelleen.")
                 else:
                     print("Nimi on jo käytössä. Anna eri nimi.")
@@ -148,7 +148,7 @@ def lento(pelaaja, pelilauta):
                             pelaaja[3] += 1
                             print(f"Olet saapunut lentokenttään{GREEN}  {pelaaja[3]+1}. {pelilauta[pelaaja[3]]}{RESET}!")
                             print(f"Tuotetut päästöt {GREEN}{roundedtulos}{RESET} kg")
-                            komento = input(f"{GREEN}Paina ENTER jatkaaksesi tai kirjoita 'help' nähdääksesi apukomennot : \n {RESET}")
+                            komento = input(f"{GREEN}Paina ENTER jatkaaksesi tai kirjoita 'help' nähdääksesi apukomennot : \n {RESET}").lower().strip()
                             if komento == "help":
                                 help_menu(komento, pelaajat)
                             pelaaja[2] += roundedtulos
