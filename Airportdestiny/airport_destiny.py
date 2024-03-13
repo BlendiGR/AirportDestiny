@@ -197,3 +197,4 @@ määrä = määrä_määrittely()
 pelaajat = pelaaja_nimi(määrä)
 intro_tekstit()
 pelinaloittaja(main,easter_egg)
+
