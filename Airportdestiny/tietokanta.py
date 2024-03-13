@@ -13,6 +13,10 @@ def yhteys():
     )
     return connection
 
+def tietokanta_alustus(sql_yhteys):
+    cursor = sql_yhteys.cursor()
+    sql2 = "drop table if exists game, goal_reached, goal;"
+    cursor.execute(sql2)
 
 def satunnaiset_maat(sql_yhteys):
 
