@@ -77,6 +77,8 @@ def intro_tekstit():
     input(f"1 nopan silmäluku vastaa 1000€. Mitä kalliimpi lento, sitä ympäristöystävällisempi se on.{GREEN}\nPaina ENTER nähdääksesi lentokone vaihtoehdot.{RESET}\n")
     for lentokone in lentokone_esittely:
         print(lentokone)
+        time.sleep(1.2
+                   )
 
     input(f"{GREEN}Paina ENTER jatkaaksesi{RESET}")
     input(f"Aloitamme pelin {GREEN}{pelilauta[0]}:issa {RESET}, seuraava kohde on: {GREEN}{pelilauta[1]}{RESET}. {GREEN}(Paina ENTER jatkaaksesi) {RESET}")
