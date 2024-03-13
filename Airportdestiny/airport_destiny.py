@@ -69,7 +69,7 @@ def intro_tekstit():
     for i, lentoasema in enumerate(pelilauta, start=1):
         print(f"{i} -{GREEN} {lentoasema}{RESET}")
 
-    input(f"\nAloitus summa on 1000 rahaa ja tavoitteena on lentää {pelilauta[-1]}:iin mahdolisimman vähäisillä päästöillä. Vuorojen määrä vaikuttaa pisteisiin. {GREEN} \nPaina ENTER jatkaaksesi{RESET}")
+    input(f"Aloitus summa on 1000 rahaa ja tavoitteena on lentää {pelilauta[-1]}:iin mahdolisimman vähäisillä päästöillä. Vuorojen määrä vaikuttaa pisteisiin. {GREEN} Paina ENTER jatkaaksesi\n{RESET}")
     input(f"1 nopan silmäluku vastaa 1000€. Mitä kalliimpi lento, sitä ympäristöystävällisempi se on.{GREEN}\nPaina ENTER nähdääksesi lentokone vaihtoehdot.{RESET}\n")
     for lentokone in lentokone_esittely:
         for char in lentokone:
@@ -77,7 +77,7 @@ def intro_tekstit():
             time.sleep(0.0)
 
     input(f"{GREEN}Paina ENTER jatkaaksesi{RESET}")
-    input(f"Aloitamme pelin {GREEN}{pelilauta[0]}:issa {RESET}, seuraava kohde on: {GREEN}{pelilauta[1]}{RESET}. {GREEN}(Paina ENTER jatkaaksesi) {RESET}")
+    input(f"Aloitamme pelin {GREEN}{pelilauta[0]}:issa {RESET}, seuraava kohde on: {GREEN}{pelilauta[1]}{RESET}. {GREEN}(Paina ENTER jatkaaksesi) \n{RESET}")
 
 
 # PELIN PÄÄFUNKTIO, JOKA KUTSUU HEITTÄÄ_NOPPAA JA EASTER_EGG FUNKTIOT. SISÄLTÄÄ JOKA VUOROLLA TEHDYT PELAAJIEN VALINNAT.
