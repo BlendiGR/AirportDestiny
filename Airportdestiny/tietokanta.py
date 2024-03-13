@@ -46,7 +46,6 @@ def satunnaiset_maat(sql_yhteys):
     for n in pelilauta:
         return pelilauta
 
-
 def maiden_välinenpituus(entinen, nykyinen):
     cursor = sql_yhteys.cursor()
     sql = (f"SELECT latitude_deg, longitude_deg FROM airport WHERE name = '{pelilauta[entinen-1]}'")
