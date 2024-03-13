@@ -109,12 +109,14 @@ def main(heittää_noppaa, easter_egg): #MAIN FUNKTIO JOKA PYÖRITTÄÄ PELIÄ--
                     pelaaja[2] *= 0.9
                     int(pelaaja[2])
                     print(f"{BLUE}{pelaaja[0]}{RESET}{GREEN}Päästöt kompensoitu!\n{RESET}")
-            pelaaja[4] += 1
+                pelaaja[4] += 1
+
+
 
 
             valitsija = True
 
-        except ValueError:
+        except ValueError or not vastaus2:
             print(f"{RED}Väärä komento!{RESET}")
 
 
@@ -146,7 +148,7 @@ def lento(pelaaja, pelilauta):
                             tulos = kilometrit * lentokoneet[i][1]
                             roundedtulos = round(tulos, 0)
                             pelaaja[3] += 1
-                            print(f"Olet saapunut lentokenttään{GREEN}  {pelaaja[3]+1}. {pelilauta[pelaaja[3]-1]}{RESET}!")
+                            print(f"Olet saapunut lentokenttään{GREEN}  {pelaaja[3]+1}. {pelilauta[pelaaja[3]]}{RESET}!")
                             print(f"Tuotetut päästöt {GREEN}{roundedtulos}{RESET} kg")
                             komento = input(f"{GREEN}Paina ENTER jatkaaksesi tai kirjoita 'help' nähdääksesi apukomennot : \n {RESET}").lower().strip()
                             if komento == "help":
