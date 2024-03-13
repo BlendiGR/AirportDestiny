@@ -3,7 +3,7 @@ from musiikki import *
 from varit import *
 def kivi_paperi_sakset(pelaaja):
     kivi_paperi_sakset_musa()
-    print(f"{pelaaja[0]} olet joutunut kaksinkamppailuun pelissä kivi, paperi, sakset!!!\n"
+    print(f"{BLUE}{pelaaja[0]}{RESET}{YELLOW} olet joutunut kaksinkamppailuun pelissä kivi, paperi, sakset!{RESET}\n"
           f"- Voitto = saat 3x omaisuutesi määrän\n"
           f"- Tasapeli = et menetä mitään\n"
           f"- Häviö = menetät 50% omaisuudestasi.")
