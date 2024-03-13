@@ -146,7 +146,7 @@ def lento(pelaaja, pelilauta):
                             tulos = kilometrit * lentokoneet[i][1]
                             roundedtulos = round(tulos, 0)
                             pelaaja[3] += 1
-                            print(f"Olet saapunut lentokenttään{GREEN}  {pelaaja[3]+1}. {pelilauta[pelaaja[3]]}{RESET}!")
+                            print(f"Olet saapunut lentokenttään{GREEN}  {pelaaja[3]+1}. {pelilauta[pelaaja[3]-1]}{RESET}!")
                             print(f"Tuotetut päästöt {GREEN}{roundedtulos}{RESET} kg")
                             komento = input(f"{GREEN}Paina ENTER jatkaaksesi tai kirjoita 'help' nähdääksesi apukomennot : \n {RESET}").lower().strip()
                             if komento == "help":
@@ -197,4 +197,5 @@ määrä = määrä_määrittely()
 pelaajat = pelaaja_nimi(määrä)
 intro_tekstit()
 pelinaloittaja(main,easter_egg)
+
 
