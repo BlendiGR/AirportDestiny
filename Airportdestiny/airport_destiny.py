@@ -69,8 +69,8 @@ def intro_tekstit():
     for i, lentoasema in enumerate(pelilauta, start=1):
         print(f"{i} -{GREEN} {lentoasema}{RESET}")
 
-    input(f"Aloitus summa on 1000 rahaa ja tavoitteena on lentää {pelilauta[-1]}:iin mahdolisimman vähäisillä päästöillä. Vuorojen määrä vaikuttaa pisteisiin. {GREEN} Paina ENTER jatkaaksesi\n{RESET}")
-    input(f"1 nopan silmäluku vastaa 1000€. Mitä kalliimpi lento, sitä ympäristöystävällisempi se on.{GREEN}  Paina ENTER {BLUE}nähdääksesi lentokone vaihtoehdot : {RESET}\n")
+    input(f"Tavoitteena on lentää {pelilauta[-1]}:iin mahdolisimman vähäisillä päästöillä ja vuoroilla, koska vuorojen määrä vaikuttaa pisteisiin. {GREEN} Paina ENTER jatkaaksesi\n{RESET}")
+    input(f"1 nopan silmäluku vastaa 1000€. Mitä kalliimpi lento, sitä ympäristöystävällisempi se on.{GREEN}  Paina ENTER {BLUE}nähdäksesi lentokone vaihtoehdot : {RESET}\n")
     for lentokone in lentokone_esittely:
         for char in lentokone:
             print(char, end='', flush=True)
@@ -178,14 +178,14 @@ def pelinaloittaja(main, easter_egg):
                 pelaajat.remove(pelaaja)
         if not pelaajat:
             input(f"Kaikki ovat päässeet maaliin!{GREEN} Paina ENTER nähdääksesi pisteet : {RESET} \n")
-            print(f"{YELLOW} Sitä pienempi luku sitä parempi.{RESET}")
+            print(f"{YELLOW} Mitä pienempi luku, sitä parempi tulos.{RESET}")
             for voittaja in maali:
                 voittaja_lista = []
                 nimi, raha, päästöt, paikka, vuorot = voittaja
                 pisteet = vuorot / päästöt
                 voittaja_lista.append((nimi, pisteet * 10000))
                 for nimi, pisteet in voittaja_lista:
-                    print(f" - {BLUE}{nimi}{RESET}, pisteet {GREEN}{pisteet:.1f}{RESET} ! ")
+                    print(f" - {BLUE}Onneksi olkoon pelin läpäisemisestä!! {nimi}{RESET}, pisteet {GREEN}{pisteet:.1f}{RESET} ! ")
 
             kun_kaikki_saapuu = True
 
