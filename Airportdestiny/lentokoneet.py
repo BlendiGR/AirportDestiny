@@ -4,9 +4,10 @@ YELLOW = '\033[33m'
 BLUE = '\033[34m'
 RESET = '\033[0m'
 
-
+#esittely variable joka kutsutaan joka kerta kun lennnetään
 lentokoneet_esittely_stripped = ("Sähkölentokone", "Hybridi Helikopteri", "Sähköliitokone", "Biodiesel Jet", "Sähköhelikopteri", "Aurinkoivoima Raketti")
 
+#intro teksti esittely
 lentokone_esittely = (f'''
 {BLUE}1. Sähkölentokone{RESET}
 
@@ -45,5 +46,6 @@ Hinta: 1000€{RESET}
 Kuvaus: Innovaatiivinen konsepti, joka yhdistää aurinkoenergian ja raketin teknologian, tarjoten ainutlaatuisen, mutta vähemmän tehokkaan matkustustavan alhaisimmalla hinnalla.
  ''')
 
+#Laskennaliset arvot
 lentokoneet = [[6000, 0.25], [5000, 0.30], [4000, 0.35], [3000, 0.40], [2000, 0.45], [1000, 0.50]]
 
