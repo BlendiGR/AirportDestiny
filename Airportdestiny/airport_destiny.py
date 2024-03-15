@@ -160,7 +160,7 @@ def lento(pelaaja, pelilauta):
             print(f"Väärä valinta. Valitse lentokone {BLUE} (0 - 6){RESET}{GREEN}!")
 
 
-#FUNKTIO PELIN LOPETTAMISEEN: LASKEE PELAAJAN/PELAAJIEN PISTEET
+#FUNKTIO PELIN LOPETTAMISEEN: LASKEE PELAAJAN/PELAAJIEN PISTEET#
 def pelinaloittaja(main, easter_egg):
     maali = []
     kun_kaikki_saapuu = False
