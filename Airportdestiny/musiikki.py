@@ -1,4 +1,5 @@
-import pygame#
+import pygame
+#Musiikit
 def musat():
     pygame.init()
     pygame.mixer.init()

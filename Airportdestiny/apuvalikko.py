@@ -16,7 +16,7 @@ YELLOW = '\033[93m'
 GREEN = '\033[92m'
 RESET = '\033[0m'
 RED = '\033[91m'
-
+#Help menu
 def help_menu(komento_input, pelaajat):
 
     if komento_input == "help":

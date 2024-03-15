@@ -28,7 +28,7 @@ def esittely():
         f" \nEuroopan maissa toimii tämänhetkisesti yhteinen valuutta nimeltään: 'raha'."
         f" {GREEN}\n(Paina ENTER jatkaaksesi)\n{RESET}")
 
-# PELAAJAN MÄÄRÄ ---------------------------------------------------------------------------------------------------
+# PELAAJAN MÄÄRÄ ----------------------------------------------------------------------------------------------------
 def määrä_määrittely():
     while True:
         try:

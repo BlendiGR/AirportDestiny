@@ -1,6 +1,6 @@
 import random
 from varit import *
-#
+##
 def heittää_noppaa():
     return random.randint(1, 6)
 

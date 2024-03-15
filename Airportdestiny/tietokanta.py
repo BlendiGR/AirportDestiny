@@ -29,7 +29,7 @@ def satunnaiset_maat(sql_yhteys):
     and type = 'large_airport';""")
     cursor.execute(sql)
     result = cursor.fetchall()
-    for airport, country in result:
+    for airport, country in result: #Azur lentokenttä aiheuttaa ongelmia koodiin
         if "Azur" in airport:
             sqld = ("delete from airport where airport.ident = 'LFMN'")
             cursor.execute(sqld)

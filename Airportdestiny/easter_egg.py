@@ -1,6 +1,7 @@
 import random
 from musiikki import *
 from varit import *
+#Easteregg toiminnot
 def kivi_paperi_sakset(pelaaja):
     kivi_paperi_sakset_musa()
     print(f"{BLUE}{pelaaja[0]}{RESET}{YELLOW} olet joutunut kaksinkamppailuun pelissä kivi, paperi, sakset!{RESET}\n"
